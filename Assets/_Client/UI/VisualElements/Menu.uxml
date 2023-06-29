@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Styles/buttons.uss?fileID=7433441132597879392&amp;guid=210e2218cb3562b498af9f4f47055b3d&amp;type=3#buttons" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: auto; height: auto;">
+        <ui:VisualElement name="Menu" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.55); align-items: stretch; justify-content: flex-start; align-self: flex-start; width: auto; top: 0; left: 55%; height: auto;">
+            <ui:Label tabindex="-1" text="Broken world &#10;Chronicles" display-tooltip-when-elided="true" name="name" class="buttons" style="font-size: 100%; -unity-text-align: upper-center; border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); background-color: rgba(217, 217, 217, 0); -unity-text-outline-color: rgba(255, 255, 255, 0); color: rgb(219, 203, 203); width: auto; height: auto;" />
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: relative; opacity: 1; left: 0; right: auto; height: auto; align-items: stretch; width: auto; flex-basis: auto; top: 12%; bottom: auto; justify-content: flex-start; align-self: center;">
+                <ui:Button text="Play" display-tooltip-when-elided="true" name="ButtonPlay" class="onButtons buttons" style="left: auto; bottom: auto; top: auto; right: auto; position: relative; height: auto; width: auto; font-size: 70%; align-self: stretch; justify-content: flex-start; align-items: stretch; text-overflow: clip;" />
+                <ui:Button text="Settings" display-tooltip-when-elided="true" name="ButtonSettings" class="buttons onButtons" style="left: auto; bottom: auto; top: auto; right: auto; position: relative; height: auto; width: auto; font-size: 70%;" />
+                <ui:Button text="Exit" display-tooltip-when-elided="true" name="ButtonExit" class="buttons onButtons" style="left: auto; bottom: auto; top: auto; right: auto; position: relative; height: auto; width: auto; font-size: 70%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
