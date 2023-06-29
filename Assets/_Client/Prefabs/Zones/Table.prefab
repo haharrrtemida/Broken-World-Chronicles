@@ -112,6 +112,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 5323864475603514419, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323864475603514419, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u042D\u0442\u043E \u041A\u043E\u0437\u0435\u043B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323864475603514419, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "\u042F \u043D\u0435 \u043A\u043E\u0437\u0435\u043B"
+      objectReference: {fileID: 0}
     - target: {fileID: 8049719664338303134, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_Size.x
       value: 30.000002
