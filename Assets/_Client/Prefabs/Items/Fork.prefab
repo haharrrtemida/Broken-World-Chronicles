@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fork
       objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b48a0395f6440046b2a1875eec5c6c0, type: 2}
     - target: {fileID: 6867698758942989057, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: m_Size.x
       value: 2.963499

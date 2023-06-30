@@ -9,6 +9,7 @@ public class Player : PersistentSingleton<Player>
     {
         _movement = GetComponent<PlayerMotor>();
         _movement.Initialize();
+        InventoryManager.Instance.Initialize();
     }
 
 
