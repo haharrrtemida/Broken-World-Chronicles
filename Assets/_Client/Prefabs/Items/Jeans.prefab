@@ -88,6 +88,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jeans
       objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u042D\u0442\u043E \u043C\u043E\u0438 \u0434\u0436\u0438\u043D\u0441\u044B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "\u041E\u0441\u0442\u0430\u043B\u043E\u0441\u044C \u043D\u0430\u0439\u0442\u0438
+        \u0444\u0443\u0442\u0431\u043E\u043B\u043A\u0443"
+      objectReference: {fileID: 0}
     - target: {fileID: 6867698758942989057, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: m_Size.x
       value: 5.1318083

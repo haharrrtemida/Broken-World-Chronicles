@@ -1,9 +1,13 @@
 public enum GameState
 {
-    
+    Start,
+    MainMenu,
+    OpenLevel,
+    Game,
+    Pause
 }
 
-public enum Scene
+public enum SceneName
 {
     Bootstrap,
     MainMenu,

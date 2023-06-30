@@ -7,7 +7,7 @@ public class CharacterTextBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private float _textSpeed;
-    [SerializeField] private string[] lines;
+    private string[] lines;
     private int index;
 
     private void Start()
@@ -58,7 +58,11 @@ public class CharacterTextBox : MonoBehaviour
 
     public void SetText(string[] lines)
     {
-        this.lines = lines;
+        if (this.lines != lines)
+        {
+            this.lines = lines;
+            index = 0;
+        }
         PushText();
     }
 }
