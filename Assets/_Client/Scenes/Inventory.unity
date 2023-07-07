@@ -358,9 +358,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1449851711}
+      - m_Target: {fileID: 1449851706}
         m_TargetAssemblyTypeName: inventoryinterfase, Assembly-CSharp
-        m_MethodName: LeaveOutInventory
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -880,6 +880,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeInventoryButton: {fileID: 819302138}
   _inventory: {fileID: 782556908}
+  _startItems:
+  - {fileID: 11400000, guid: 420c20e2170ad2b4caff3e7f20a33fcb, type: 2}
+  - {fileID: 11400000, guid: 048682adc8d314d4eb2b21b59b481697, type: 2}
+  - {fileID: 11400000, guid: 14cd85d59f3f81947ac310cd1b468687, type: 2}
 --- !u!1 &1541601681
 GameObject:
   m_ObjectHideFlags: 0
