@@ -104,6 +104,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photo
       objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u0424\u041E\u0422\u041E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "\u041A\u041E\u0422"
+      objectReference: {fileID: 0}
     - target: {fileID: 8049719664338303134, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_Size.x
       value: 19.6

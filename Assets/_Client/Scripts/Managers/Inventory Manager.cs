@@ -19,7 +19,7 @@ public class InventoryManager : PersistentSingleton<InventoryManager>
 
     public void RemoveItem(InventoryItemSO Item)
     {
-        _inventoryItems.Add(Item);
+        _inventoryItems.Remove(Item);
     }
 
     public void CloseInventory()

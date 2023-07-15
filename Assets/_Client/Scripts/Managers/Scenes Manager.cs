@@ -43,6 +43,12 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
         LoadScene((SceneName)index);
     }
 
+    public void LoadPreviousScene()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex - 1;
+        LoadScene((SceneName)index);
+    }
+
     public void OpenInventory()
     {
         LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
