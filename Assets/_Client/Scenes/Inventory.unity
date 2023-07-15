@@ -880,6 +880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _closeInventoryButton: {fileID: 819302138}
   _inventory: {fileID: 782556908}
+  itemPrefab: {fileID: 234269305936522407, guid: b228c3970c74f6743b9988c713650dec, type: 3}
   _startItems:
   - {fileID: 11400000, guid: 420c20e2170ad2b4caff3e7f20a33fcb, type: 2}
   - {fileID: 11400000, guid: 048682adc8d314d4eb2b21b59b481697, type: 2}

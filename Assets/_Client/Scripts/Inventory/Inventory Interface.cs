@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
 public class InventoryInterface : MonoBehaviour
@@ -9,11 +8,10 @@ public class InventoryInterface : MonoBehaviour
     [SerializeField] private Transform _inventory;
     [SerializeField] private GameObject itemPrefab;
     private List<InventoryItemSO> _inInventoryItems;
-    public List<InventoryItemSO> _startItems;
 
     private void Start()
     {
-        _inInventoryItems.Clear();
+        //_inInventoryItems = new List<InventoryItemSO>();
         _closeInventoryButton.onClick.AddListener(InventoryManager.Instance.CloseInventory);
         AddToInventory();
     }
@@ -24,14 +22,14 @@ public class InventoryInterface : MonoBehaviour
         for (int i = 0; i < _inInventoryItems.Count; i++)
         {
             var item = _inInventoryItems[i];
-            GameObject Item = Instantiate(itemPrefab, _inventory);
+            var Item = Instantiate(itemPrefab, _inventory);
             Item.transform.SetParent(_inventory);
             Item.transform.localScale = new Vector3(1, 1, 1);
 
-            var itemText = Item.transform.Find("itemText").GetComponent<Text>();
+            var itemText = Item.transform.Find("itemName").GetComponent<Text>();
             var itemImage = Item.transform.Find("itemImage").GetComponent<Image>();
 
-            itemText.text = item.name;
+            //itemText.text = item.Name();
             itemImage.sprite = item.GetSprite();
         }
     }

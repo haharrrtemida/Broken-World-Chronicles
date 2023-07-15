@@ -1,6 +1,5 @@
 using Artemida.Tools;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class InventoryManager : PersistentSingleton<InventoryManager>
 {
