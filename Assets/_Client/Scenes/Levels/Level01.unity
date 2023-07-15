@@ -509,11 +509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.29
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -938,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 8396416590955834507, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512952192669730751, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
+      propertyPath: _nextScene
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

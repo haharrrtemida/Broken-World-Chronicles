@@ -7,29 +7,16 @@ public class CharacterTextBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private float _textSpeed;
-    private string[] _lines;
-    private int _index;
+    private string[] lines;
 
     private void Start()
     {
         _textMeshPro.text = string.Empty;
     }
 
-    private void NextLine()
+    private IEnumerator TypeLine(int numberLine)
     {
-        if (_index < _lines.Length)
-        {
-            _index++;
-            _textMeshPro.text = string.Empty;
-
-            StartCoroutine(TypeLine(_lines[_index]));
-        }
-    }
-
-
-    private IEnumerator TypeLine(string line)
-    {
-        foreach (char c in line)
+        foreach (char c in lines[numberLine])
         {
             _textMeshPro.text += c;
             yield return new WaitForSeconds(_textSpeed);
@@ -37,22 +24,23 @@ public class CharacterTextBox : MonoBehaviour
     }
 
     private IEnumerator PushText()
-    {
-        for (int _index = 0; _index < _lines.Length; _index++)
+    { 
+        for (int i = 0; i < lines.Length; i++)
         {
-            StartCoroutine(TypeLine(_lines[_index]));
-            yield return new WaitForSeconds((_lines[_index].Length * _textSpeed) + 2);
+            StartCoroutine(TypeLine(i));
+            yield return new WaitForSeconds(5);
             _textMeshPro.text = string.Empty;
         }
+
     }
 
     public void SetText(string[] lines)
     {
-        if (this._lines != lines)
+        if (this.lines != lines)
         {
-            this._lines = lines;
             StopAllCoroutines();
             _textMeshPro.text = string.Empty;
+            this.lines = lines;
             StartCoroutine(PushText());
         }
     }
