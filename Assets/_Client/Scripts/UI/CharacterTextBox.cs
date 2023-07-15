@@ -7,62 +7,53 @@ public class CharacterTextBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private float _textSpeed;
-    private string[] lines;
-    private int index;
+    private string[] _lines;
+    private int _index;
 
     private void Start()
     {
         _textMeshPro.text = string.Empty;
     }
 
-    /*public void StartLine(string[] lines)
+    private void NextLine()
     {
-        index = 0;
-        StartCoroutine(TypeLine(lines));
+        if (_index < _lines.Length)
+        {
+            _index++;
+            _textMeshPro.text = string.Empty;
+
+            StartCoroutine(TypeLine(_lines[_index]));
+        }
     }
 
-    IEnumerable TypeLine(string[] lines)
+
+    private IEnumerator TypeLine(string line)
     {
-        foreach(char c in lines[index].ToCharArray())
+        foreach (char c in line)
         {
             _textMeshPro.text += c;
             yield return new WaitForSeconds(_textSpeed);
         }
     }
 
-
-    private void NextLine(string[] lines)
+    private IEnumerator PushText()
     {
-        if (index < lines.Length - 1)
+        for (int _index = 0; _index < _lines.Length; _index++)
         {
-            index++;
+            StartCoroutine(TypeLine(_lines[_index]));
+            yield return new WaitForSeconds((_lines[_index].Length * _textSpeed) + 2);
             _textMeshPro.text = string.Empty;
-
-            StartCoroutine(TypeLine(lines));
-        }
-    }*/
-
-    private void PushText()
-    {
-        if (index == lines.Length)
-        {
-            index = 0;
-            _textMeshPro.text = string.Empty;
-        }
-        else
-        {
-            _textMeshPro.text = lines[index];
-            index++;
         }
     }
 
     public void SetText(string[] lines)
     {
-        if (this.lines != lines)
+        if (this._lines != lines)
         {
-            this.lines = lines;
-            index = 0;
+            this._lines = lines;
+            StopAllCoroutines();
+            _textMeshPro.text = string.Empty;
+            StartCoroutine(PushText());
         }
-        PushText();
     }
 }
