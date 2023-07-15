@@ -34,6 +34,7 @@ public class GameManager : PersistentSingleton<GameManager>
             case GameState.Game:
                 if (!Player.Instance)
                     Player.Instance.Initialize();
+                InventoryManager.Instance.Initialize();
                 break;
             case GameState.Pause:
                 break;

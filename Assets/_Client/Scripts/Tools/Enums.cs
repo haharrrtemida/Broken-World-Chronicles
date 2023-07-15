@@ -11,8 +11,8 @@ public enum SceneName
 {
     Bootstrap,
     MainMenu,
-    Level02,
     Level01,
+    Level02,
     level03,
     Inventory
 }
