@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI/Styles/buttons.uss?fileID=7433441132597879392&amp;guid=210e2218cb3562b498af9f4f47055b3d&amp;type=3#buttons" />
-    <ui:VisualElement name="Settings" picking-mode="Ignore" style="flex-grow: 1; background-color: rgb(9, 96, 16); width: 100%; height: 100%; left: auto; align-items: center; top: auto; right: auto; align-self: stretch; justify-content: space-between;">
+    <Style src="project://database/Assets/_Client/UI/Styles/buttons.uss?fileID=7433441132597879392&amp;guid=210e2218cb3562b498af9f4f47055b3d&amp;type=3#buttons" />
+    <ui:VisualElement name="Settings" picking-mode="Ignore" style="flex-grow: 1; background-color: rgb(9, 96, 16); width: 1920px; height: 1080px; left: auto; align-items: center; top: auto; right: auto; align-self: stretch; justify-content: space-between;">
         <ui:Label tabindex="-1" text="Settings" display-tooltip-when-elided="true" style="font-size: 100px; -unity-font-style: bold; width: auto; left: auto; -unity-text-align: upper-center; top: 5%; color: rgb(183, 183, 183);" />
         <ui:Button text="Back" display-tooltip-when-elided="true" name="ButtonBack" class="buttons onButtons" style="width: auto; height: auto; font-size: 50px; left: auto; top: auto; align-self: stretch;" />
     </ui:VisualElement>

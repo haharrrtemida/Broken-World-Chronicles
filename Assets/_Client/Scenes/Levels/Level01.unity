@@ -286,8 +286,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247843764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4086, y: -2.57, z: 0}
-  m_LocalScale: {x: 19.97988, y: 5, z: 1}
+  m_LocalPosition: {x: -0.1941, y: -2.57, z: 0}
+  m_LocalScale: {x: 23.114395, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -509,11 +509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.61
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.94
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 8359664802197961154, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -566,11 +566,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 975366888353617886, guid: d84a78f165dc2134a8062e44b54cb42f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.34
+      value: 4.19
       objectReference: {fileID: 0}
     - target: {fileID: 975366888353617886, guid: d84a78f165dc2134a8062e44b54cb42f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 975366888353617886, guid: d84a78f165dc2134a8062e44b54cb42f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -608,6 +608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shoes
       objectReference: {fileID: 0}
+    - target: {fileID: 1831759215377027015, guid: d84a78f165dc2134a8062e44b54cb42f, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 14cd85d59f3f81947ac310cd1b468687, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -836,11 +840,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1810414082551792165, guid: f4104adccb88d7e40b31f091101dc057, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 1810414082551792165, guid: f4104adccb88d7e40b31f091101dc057, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.52
+      value: -2.02
       objectReference: {fileID: 0}
     - target: {fileID: 1810414082551792165, guid: f4104adccb88d7e40b31f091101dc057, type: 3}
       propertyPath: m_LocalPosition.z
@@ -934,10 +938,6 @@ PrefabInstance:
     - target: {fileID: 8396416590955834507, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
       propertyPath: m_Name
       value: Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 8512952192669730751, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
-      propertyPath: _nextScene
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
