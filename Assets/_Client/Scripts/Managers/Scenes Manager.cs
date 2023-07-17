@@ -1,5 +1,4 @@
 using Artemida.Tools;
-using System;
 using UnityEngine.SceneManagement;
 
 public class ScenesManager : PersistentSingleton<ScenesManager>
@@ -20,9 +19,9 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
 
     }
 
-    public void LoadScene(SceneName scene)
+    public void LoadScene(SceneName scene, LoadSceneMode mode = LoadSceneMode.Single)
     {
-        SceneManager.LoadScene(scene.ToString());
+        SceneManager.LoadScene(scene.ToString(), mode);
     }
 
     public void LoadMainMenu()
@@ -42,5 +41,21 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
     {
         int index = SceneManager.GetActiveScene().buildIndex + 1;
         LoadScene((SceneName)index);
+    }
+
+    public void LoadPreviousScene()
+    {
+        int index = SceneManager.GetActiveScene().buildIndex - 1;
+        LoadScene((SceneName)index);
+    }
+
+    public void OpenInventory()
+    {
+        LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
+    }
+
+    public void CloseInventory()
+    {
+        SceneManager.UnloadSceneAsync(SceneName.Inventory.ToString());
     }
 }

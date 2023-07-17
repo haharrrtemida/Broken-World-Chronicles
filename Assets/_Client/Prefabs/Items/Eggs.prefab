@@ -76,6 +76,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eggs
       objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 420c20e2170ad2b4caff3e7f20a33fcb, type: 2}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u042F\u0438\u0447\u043D\u0438\u0446\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "\u042F\u0438\u0447\u043D\u0438\u0446\u0430"
+      objectReference: {fileID: 0}
     - target: {fileID: 6867698758942989057, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: m_Size.x
       value: 4.9

@@ -18,6 +18,7 @@ public class InputManager : PersistentSingleton<InputManager>
         _UIActions = _playerInput.UI;
 
         _playerInput.Player.Move.performed += context => SetTarget();
+        _playerInput.Player.OpenInventory.performed += context => OpenInventory();
         _UIActions.Enable();
     }
 
@@ -53,5 +54,10 @@ public class InputManager : PersistentSingleton<InputManager>
     public void ActivatePlayerMap()
     {
         ToggleActionMap(_playerActions);
+    }
+
+    public void OpenInventory()
+    {
+        ScenesManager.Instance.OpenInventory();
     }
 }

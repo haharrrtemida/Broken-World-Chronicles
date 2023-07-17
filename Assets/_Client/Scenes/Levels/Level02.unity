@@ -662,6 +662,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2482536942049296093, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
+      propertyPath: lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482536942049296093, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u0418\u043D\u0435\u0442\u0440\u0435\u0441\u043D\u043E \u043A\u0443\u0434\u0430
+        \u0432\u0435\u0434\u0435\u0442 \u044D\u0442\u0430 \u0434\u0432\u0435\u0440\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 7750493735326380996, guid: f0332e9fb9a38e841b244c2014c8a468, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1066,7 +1075,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 20a84c6253419f34a9cfe58de8bf656f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e0b85df5964861a4a88a2b0ff5a09f7e, type: 2}
 --- !u!4 &1830091601
 Transform:
   m_ObjectHideFlags: 0
@@ -1096,11 +1105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5354809427700161010, guid: d5d8a2185224e4c4c9c4e6ee77a9fc59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.65
+      value: 2.1249604
       objectReference: {fileID: 0}
     - target: {fileID: 5354809427700161010, guid: d5d8a2185224e4c4c9c4e6ee77a9fc59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.33
+      value: -3.4231973
       objectReference: {fileID: 0}
     - target: {fileID: 5354809427700161010, guid: d5d8a2185224e4c4c9c4e6ee77a9fc59, type: 3}
       propertyPath: m_LocalPosition.z

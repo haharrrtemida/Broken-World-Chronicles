@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b28ab26193e7c848a25f05fc8d3a2d3, type: 3}
+  m_Name: T-shirt
+  m_EditorClassIdentifier: 
+  _name: T-Shirt
+  _icon: {fileID: 21300000, guid: 606e04057e5c8114ba7c288c790652c3, type: 3}
+  _motherPrefab: {fileID: 438743202905185642, guid: f4104adccb88d7e40b31f091101dc057, type: 3}

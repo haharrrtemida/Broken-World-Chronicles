@@ -129,6 +129,14 @@ PrefabInstance:
         \u041C\u043E\u0436\u0435\u0442, \u0434\u0435\u0434\u0443\u0448\u043A\u0430
         \u0447\u0442\u043E-\u0442\u043E \u043F\u0440\u0438\u0433\u043E\u0442\u043E\u0432\u0438\u043B?"
       objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "\u0421\u0442\u043E\u043B"
+      objectReference: {fileID: 0}
     - target: {fileID: 8049719664338303134, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_Size.x
       value: 30.000002

@@ -32,7 +32,9 @@ public class GameManager : PersistentSingleton<GameManager>
             case GameState.OpenLevel:
                 break;
             case GameState.Game:
-                if (!Player.Instance) Player.Instance.Initialize();
+                if (!Player.Instance)
+                    Player.Instance.Initialize();
+                InventoryManager.Instance.Initialize();
                 break;
             case GameState.Pause:
                 break;

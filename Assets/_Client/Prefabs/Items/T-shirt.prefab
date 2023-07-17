@@ -89,11 +89,19 @@ PrefabInstance:
       value: T-shirt
       objectReference: {fileID: 0}
     - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 09799d6d1b8908c40b5fd50a6861e721, type: 2}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: lines.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: lines.Array.data[0]
+      value: "\u0410 \u0432\u043E\u0442 \u0438 \u0444\u0443\u0442\u0431\u043E\u043B\u043A\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: lines.Array.data[1]
       value: "\u0410 \u0432\u043E\u0442 \u0438 \u0444\u0443\u0442\u0431\u043E\u043B\u043A\u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 6867698758942989057, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
