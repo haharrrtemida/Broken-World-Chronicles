@@ -488,6 +488,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""566db6a2-a1c9-44ae-87fd-7426dacdc6d7"",
+                    ""path"": ""<VirtualMouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""535d0d36-6512-4701-ac26-fb1dd0c86489"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -532,11 +543,33 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""30d976ae-7c8b-4ac7-afdd-ac172aaf4830"",
+                    ""path"": ""<VirtualMouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""b3146b94-5564-4824-898e-402fe95b4e53"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""ScrollWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""93d83d33-7f76-47b4-8479-73b2eb1ce4b7"",
+                    ""path"": ""<VirtualMouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""ScrollWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -611,6 +644,22 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Gamepad"",
+            ""bindingGroup"": ""Gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<VirtualMouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -851,6 +900,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         {
             if (m_JoystickSchemeIndex == -1) m_JoystickSchemeIndex = asset.FindControlSchemeIndex("Joystick");
             return asset.controlSchemes[m_JoystickSchemeIndex];
+        }
+    }
+    private int m_GamepadSchemeIndex = -1;
+    public InputControlScheme GamepadScheme
+    {
+        get
+        {
+            if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
+            return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
     public interface IPlayerActions

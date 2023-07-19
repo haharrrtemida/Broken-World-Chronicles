@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Knife
   _icon: {fileID: 21300000, guid: 3a86a1118bd39914ba967b3799518b75, type: 3}
+  _motherPrefab: {fileID: 5449157420917600492, guid: f05880d304d8ee849b05cc7112aaed81, type: 3}
