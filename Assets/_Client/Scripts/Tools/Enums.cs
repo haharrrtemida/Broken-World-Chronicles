@@ -4,7 +4,8 @@ public enum GameState
     MainMenu,
     OpenLevel,
     Game,
-    Pause
+    Pause,
+    Inventory
 }
 
 public enum SceneName

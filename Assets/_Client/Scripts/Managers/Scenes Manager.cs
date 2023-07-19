@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : PersistentSingleton<ScenesManager>
 {
+    private GameState _gameState;
+
     public void Initialize()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -51,11 +53,19 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
 
     public void OpenInventory()
     {
+        if (GameManager.Instance.GetGameState() == GameState.Game)
+        {
         LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
+        GameManager.Instance.UpdateGameState(GameState.Inventory);
+        }
     }
 
     public void CloseInventory()
     {
+        if (GameManager.Instance.GetGameState() == GameState.Inventory)
+        {
         SceneManager.UnloadSceneAsync(SceneName.Inventory.ToString());
+        GameManager.Instance.UpdateGameState(GameState.Game);
+        }
     }
 }
