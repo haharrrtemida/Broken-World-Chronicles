@@ -4,6 +4,7 @@ using UnityEngine;
 public class Player : PersistentSingleton<Player>
 {
     [SerializeField] private PlayerMotor _movement;
+    [SerializeField] private Transform _pointForItems;
 
     public void Initialize()
     {
@@ -15,5 +16,17 @@ public class Player : PersistentSingleton<Player>
     public void Move(Vector2 position)
     {
         _movement.Move(position);
+    }
+
+    public void AddRemoveItem()
+    {
+        var removeList = InventoryManager.Instance.GetRemoveList();
+        for (int i = 0; i < removeList.Count; i++)
+        {
+            var item = removeList[i];
+            Instantiate(item.GetMotherPrefab(), _pointForItems.transform);
+            print(removeList[i].ToString());
+        }
+        InventoryManager.Instance.ResetRemoveList();
     }
 }

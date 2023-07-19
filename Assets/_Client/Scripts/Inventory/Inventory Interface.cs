@@ -11,7 +11,7 @@ public class InventoryInterface : MonoBehaviour
 
     private void Start()
     {
-        //_inInventoryItems = new List<InventoryItemSO>();
+        _inInventoryItems = new List<InventoryItemSO>();
         _closeInventoryButton.onClick.AddListener(InventoryManager.Instance.CloseInventory);
         AddToInventory();
     }
@@ -25,12 +25,15 @@ public class InventoryInterface : MonoBehaviour
             var Item = Instantiate(itemPrefab, _inventory);
             Item.transform.SetParent(_inventory);
             Item.transform.localScale = new Vector3(1, 1, 1);
+            Item.GetComponent<itemininventory>().NewItem(item);
 
             var itemText = Item.transform.Find("itemName").GetComponent<Text>();
             var itemImage = Item.transform.Find("itemImage").GetComponent<Image>();
+            var removeButton = Item.transform.Find("RemoveButton").GetComponent<Button>();
 
-            //itemText.text = item.Name();
+            removeButton.onClick.AddListener(Item.GetComponent<itemininventory>().Delete);
             itemImage.sprite = item.GetSprite();
+            //itemText.text = item.Name();            
         }
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Eggs
   _icon: {fileID: 21300000, guid: 81bf077382cc2e7459feaccddce5b006, type: 3}
+  _motherPrefab: {fileID: 1643759514584231326, guid: 873ec5a3c00b1ca4bb07f709dfced996, type: 3}
