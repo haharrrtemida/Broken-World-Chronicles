@@ -6,6 +6,8 @@ public class GameManager : PersistentSingleton<GameManager>
     private GameState _currentState;
     private event Action<GameState> _onGameStateChanged;
 
+    public GameState GetGameState() => _currentState;
+
     public void Initialize()
     {
         _currentState = GameState.Start;
@@ -37,11 +39,8 @@ public class GameManager : PersistentSingleton<GameManager>
                 break;
             case GameState.Pause:
                 break;
+            case GameState.Inventory:
+                break;
         }
-    }
-
-    public GameState GetGameState()
-    {
-        return _currentState;
     }
 }
