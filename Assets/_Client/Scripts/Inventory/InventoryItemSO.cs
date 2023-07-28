@@ -13,5 +13,4 @@ public class InventoryItemSO : ScriptableObject
     public string Name() => _name;
     public GameObject GetMotherPrefab() => _motherPrefab;
     public string About() => _About;
-    public string Comment() => _comment;
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 public class Player : PersistentSingleton<Player>
 {
     [SerializeField] private PlayerMotor _movement;
-    [SerializeField] private Transform _pointForItems;
 
     public void Initialize()
     {
