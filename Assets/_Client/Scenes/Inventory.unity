@@ -1138,6 +1138,9 @@ MonoBehaviour:
   _inventory: {fileID: 782556908}
   itemPrefab: {fileID: 7306616357520310851, guid: b228c3970c74f6743b9988c713650dec, type: 3}
   _infoPanel: {fileID: 295420243}
+  _imagePanel: {fileID: 878180069}
+  _itemNamePanel: {fileID: 844336727}
+  _itemDescriptionPanel: {fileID: 2050998253}
 --- !u!1 &1541601681
 GameObject:
   m_ObjectHideFlags: 0

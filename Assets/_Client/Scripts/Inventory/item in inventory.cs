@@ -1,17 +1,17 @@
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class itemininventory : MonoBehaviour
 {
-    [SerializeField] private GameObject _itemPanel;
+    [SerializeField] private Button _aboutButton;
     private InventoryItemSO _item;
-    private bool _isPanel = true;
 
-    private void OnEnable()
+    public delegate void OnItemClickedDelegate(InventoryItemSO item);
+    public event OnItemClickedDelegate OnItemClicked;
+
+    private void Start()
     {
-        Button About = gameObject.transform.Find("AboutButton").GetComponent<Button>();
-        About.onClick.AddListener(ShowPanelAbout);
+        _aboutButton.onClick.AddListener(ShowPanelAbout);
     }
 
     public void NewItem(InventoryItemSO item)
@@ -21,15 +21,6 @@ public class itemininventory : MonoBehaviour
 
     private void ShowPanelAbout()
     {
-        if (_isPanel)
-        {
-            FindObjectOfType<InventoryInterface>().InfoPanel(_item);
-            _isPanel = false;
-        }
-        else if (!_isPanel)
-        {
-            FindObjectOfType<InventoryInterface>().CloseInfoPanel();
-            _isPanel = true;
-        }
+        OnItemClicked?.Invoke(_item);
     }
 }
