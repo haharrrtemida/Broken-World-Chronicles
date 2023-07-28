@@ -9,6 +9,15 @@ public class InventoryInterface : MonoBehaviour
     [SerializeField] private Transform _inventory;
     [SerializeField] private itemininventory itemPrefab;
     [SerializeField] private GameObject _infoPanel;
+
+    [Header("Инфопанель")]
+    [SerializeField] private Image _imagePanel;
+    [SerializeField] private TMP_Text _itemNamePanel;
+    [SerializeField] private TMP_Text _itemDescriptionPanel;
+    private InventoryItemSO _activeItem;
+
+    public InventoryItemSO ActiveItem => _activeItem;
+
     private List<InventoryItemSO> _inInventoryItems;
 
     private void Start()
@@ -29,6 +38,7 @@ public class InventoryInterface : MonoBehaviour
             Item.transform.SetParent(_inventory);
             Item.transform.localScale = new Vector3(1, 1, 1);
             Item.NewItem(item);
+            Item.OnItemClicked += OnItemClicked;
 
             TMP_Text itemText = Item.transform.Find("itemName").GetComponent<TMP_Text>();
             var itemImage = Item.transform.Find("itemImage").GetComponent<Image>();
@@ -38,19 +48,23 @@ public class InventoryInterface : MonoBehaviour
         }
     }
 
-    public void InfoPanel(InventoryItemSO _item)
+    private void OnItemClicked(InventoryItemSO item)
     {
-        var image = _infoPanel.transform.Find("Image").GetComponent<Image>();
-        TMP_Text name = _infoPanel.transform.Find("Name").GetComponent<TMP_Text>();
-        TMP_Text about = _infoPanel.transform.Find("About").GetComponent<TMP_Text>();
+        if (_activeItem == item) CloseInfoPanel();
+        else ShowInfoPanel(item);
+    }
 
-        image.sprite = _item.GetSprite();
-        name.text = _item.Name();
-        about.text = _item.About();
+    public void ShowInfoPanel(InventoryItemSO item)
+    {
+        _activeItem = item;
+        _imagePanel.sprite = item.GetSprite();
+        _itemNamePanel.text = item.Name();
+        _itemDescriptionPanel.text = item.About();
         _infoPanel.SetActive(true);
     }
     public void CloseInfoPanel()
     {
+        _activeItem = null;
         _infoPanel.SetActive(false);
     }
 }

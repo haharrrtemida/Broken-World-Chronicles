@@ -304,6 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemPanel: {fileID: 3075320178833043044, guid: ec54242386f7d6842bb3e5258ff5e2d3, type: 3}
+  _aboutButton: {fileID: 4449702531654810237}
 --- !u!1 &1798686292197018119
 GameObject:
   m_ObjectHideFlags: 0

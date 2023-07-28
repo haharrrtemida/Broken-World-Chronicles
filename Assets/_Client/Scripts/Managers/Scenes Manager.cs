@@ -57,8 +57,8 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
     {
         if (GameManager.Instance.GetGameState() == GameState.Game)
         {
-        LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
-        GameManager.Instance.UpdateGameState(GameState.Inventory);
+            LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
+         GameManager.Instance.UpdateGameState(GameState.Inventory);
         }
     }
 
