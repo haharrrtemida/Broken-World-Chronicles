@@ -418,7 +418,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -440,7 +440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movement: {fileID: 6674454860637726040}
   _pointForItems: {fileID: 4994212753605981311}
-  _player: {fileID: 6674454860637726047}
   spawnPosition: {x: 6, y: -1}
 --- !u!114 &6674454860637726040
 MonoBehaviour:
