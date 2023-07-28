@@ -1,9 +1,11 @@
 using Artemida.Tools;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ScenesManager : PersistentSingleton<ScenesManager>
 {
-    private GameState _gameState;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private LevelSO _activeLevel;
 
     public void Initialize()
     {

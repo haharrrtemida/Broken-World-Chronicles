@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Transition : Zone
-{   
-    [SerializeField] private SceneName _nextScene;
-    [SerializeField] private Vector2 _exitPosition;
+{
+    [SerializeField] private Transform _exitPosition;
+    [SerializeField] private Transform _cameraExitPosition;
 
     protected override void Interact()
     {
@@ -14,9 +13,16 @@ public class Transition : Zone
     }
     private IEnumerator TransitionToScene()
     {
-        yield return new WaitForSeconds(5);
-        ScenesManager.Instance.LoadScene(_nextScene);
-        Player.Instance.gameObject.transform.position = _exitPosition;
-        Player.Instance.Move(_exitPosition);
+        yield return new WaitForSeconds(1);
+
+        while (Player.Instance.Movement.Agent.isStopped)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        Player.Instance.Movement.Agent.enabled = false;
+        Player.Instance.gameObject.transform.position = _exitPosition.position;
+        Player.Instance.Movement.Agent.enabled = true;
+        Camera.main.transform.position = _cameraExitPosition.position;
     }
 }

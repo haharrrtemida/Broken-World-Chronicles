@@ -1,4 +1,5 @@
 using Artemida.Tools;
+using UnityEngine;
 using System;
 
 public class GameManager : PersistentSingleton<GameManager>

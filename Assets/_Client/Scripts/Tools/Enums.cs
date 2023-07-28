@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
 public enum GameState
 {
     Start,
@@ -16,4 +20,9 @@ public enum SceneName
     Level02,
     level03,
     Inventory
+}
+
+public enum LevelName
+{
+    HomeOfOberon
 }

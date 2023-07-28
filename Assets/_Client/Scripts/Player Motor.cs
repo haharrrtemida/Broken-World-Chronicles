@@ -5,6 +5,8 @@ public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;   
 
+    public NavMeshAgent Agent => _agent;
+
     public void Initialize()
     {
         _agent.updateRotation = false;
