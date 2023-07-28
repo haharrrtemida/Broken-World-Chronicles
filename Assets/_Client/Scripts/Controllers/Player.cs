@@ -5,7 +5,6 @@ public class Player : PersistentSingleton<Player>
 {
     [SerializeField] private PlayerMotor _movement;
     [SerializeField] private Transform _pointForItems;
-    [SerializeField] private GameObject _player;
 
     public PlayerMotor Movement => _movement;
 
