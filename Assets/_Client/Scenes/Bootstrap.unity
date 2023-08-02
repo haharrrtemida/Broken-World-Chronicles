@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56928c74f6c61824a90e78b6fb376c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Transition: {fileID: 700740342}
+  AnimationTransition: {fileID: 700740342}
+  _transitionAnimation: {fileID: 700740347}
   _animator: {fileID: 700740344}
 --- !u!114 &281726452
 MonoBehaviour:
@@ -315,6 +316,7 @@ GameObject:
   - component: {fileID: 700740346}
   - component: {fileID: 700740345}
   - component: {fileID: 700740344}
+  - component: {fileID: 700740347}
   m_Layer: 5
   m_Name: Transition
   m_TagString: Untagged
@@ -400,6 +402,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700740342}
   m_CullTransparentMesh: 1
+--- !u!114 &700740347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700740342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e5e8ce8d542634c8ad5dc64cf897e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797058187
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce3546a432781946b12ef4fc71e1f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: 0
 --- !u!4 &1617706589
 Transform:
   m_ObjectHideFlags: 0

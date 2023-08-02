@@ -1,10 +1,9 @@
 using Artemida.Tools;
-using UnityEngine;
 using System;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    [SerializeField] private GameState _currentState;
+    private GameState _currentState;
     private event Action<GameState> _onGameStateChanged;
 
     public GameState GetGameState() => _currentState;

@@ -3,18 +3,20 @@ using Artemida.Tools;
 
 public class UIManager : PersistentSingleton<UIManager>
 {
-    public GameObject Transition;
+    [SerializeField] private GameObject AnimationTransition;
+    [SerializeField] private TransitionAnimation _transitionAnimation;
     [SerializeField] private Animator _animator;
+
     const string TRANSITION_TRIGGER_PARAM = "TransitionComplete";
 
-    public void ûûû()
+    public TransitionAnimation TransitionAnimation => _transitionAnimation;
+    public void SetTransitionTrigger()
     {
         _animator.SetTrigger(TRANSITION_TRIGGER_PARAM);
-
     }
 
     public void StartAnimationTransition()
     {
-        Transition.SetActive(true);
+        AnimationTransition.SetActive(true);
     }
 }

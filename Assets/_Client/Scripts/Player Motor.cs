@@ -7,13 +7,10 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private NavMeshAgent _agent;
 
     public event Action OnReachDestination;
-    private Vector2 _tagetPosition;
+    private Vector2 _targetPosition;
 
     public void Initialize()
     {
-        //_agent.updateRotation = false;
-        //_agent.updateUpAxis = false;
-        //transform.localRotation = Quaternion.Euler(0, 0, 0);
         OnReachDestination += StopOnReachDestination;
     }
 
@@ -24,9 +21,9 @@ public class PlayerMotor : MonoBehaviour
 
     public void Move(Vector2 position)
     {
-        _tagetPosition = position;
+        _targetPosition = position;
         _agent.isStopped = false;
-        _agent.SetDestination(_tagetPosition);
+        _agent.SetDestination(_targetPosition);
     }
 
     public void TeleportToPoint(Vector2 position)
@@ -44,7 +41,7 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    public bool IsReachDestination => Vector2.Distance(transform.position, _tagetPosition) <= _agent.stoppingDistance;
+    public bool IsReachDestination => Vector2.Distance(transform.position, _targetPosition) <= _agent.stoppingDistance;
 
     public bool IsMoving() => !_agent.isStopped;
 }

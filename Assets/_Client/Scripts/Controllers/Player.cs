@@ -11,7 +11,7 @@ public class Player : PersistentSingleton<Player>
     public PlayerState CurrentState => _currentState;   
 
     public Vector2 spawnPosition;
-
+    
 
     public void Initialize()
     {
