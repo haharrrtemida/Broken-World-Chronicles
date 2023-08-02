@@ -1,18 +1,25 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 
 public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
-    private Vector2 _tagetPosition;
 
-    public NavMeshAgent Agent => _agent;
+    public event Action OnReachDestination;
+    private Vector2 _tagetPosition;
 
     public void Initialize()
     {
-        _agent.updateRotation = false;
-        _agent.updateUpAxis = false;
-        transform.localRotation = Quaternion.Euler(0, 0, 0);
+        //_agent.updateRotation = false;
+        //_agent.updateUpAxis = false;
+        //transform.localRotation = Quaternion.Euler(0, 0, 0);
+        OnReachDestination += StopOnReachDestination;
+    }
+
+    private void StopOnReachDestination()
+    {
+        _agent.isStopped = true;
     }
 
     public void Move(Vector2 position)
@@ -31,13 +38,13 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        if (St)
+        if (IsReachDestination)
         {
-            _agent.isStopped = true;
+            OnReachDestination?.Invoke();   
         }
     }
 
-    public bool St => Vector2.Distance(transform.position, _tagetPosition) <= _agent.stoppingDistance;
+    public bool IsReachDestination => Vector2.Distance(transform.position, _tagetPosition) <= _agent.stoppingDistance;
 
-    public bool IsMoving() => _agent.isStopped;
+    public bool IsMoving() => !_agent.isStopped;
 }

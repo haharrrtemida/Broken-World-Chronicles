@@ -4,7 +4,7 @@ using System;
 
 public class GameManager : PersistentSingleton<GameManager>
 {
-    private GameState _currentState;
+    [SerializeField] private GameState _currentState;
     private event Action<GameState> _onGameStateChanged;
 
     public GameState GetGameState() => _currentState;
@@ -35,7 +35,7 @@ public class GameManager : PersistentSingleton<GameManager>
             case GameState.OpenLevel:
                 break;
             case GameState.Game:
-                if (!Player.Instance)
+                //if (!Player.Instance)
                     Player.Instance.Initialize();
                 break;
             case GameState.Pause:

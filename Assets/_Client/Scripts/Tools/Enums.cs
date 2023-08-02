@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
 public enum GameState
 {
     Start,
@@ -9,7 +5,8 @@ public enum GameState
     OpenLevel,
     Game,
     Pause,
-    Inventory
+    Inventory,
+    Transition
 }
 
 public enum SceneName
@@ -23,4 +20,12 @@ public enum SceneName
 public enum LevelName
 {
     HomeOfOberon
+}
+
+public enum PlayerState
+{
+    Idle,
+    Moving,
+    Acting,
+    Speaking
 }

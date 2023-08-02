@@ -110,11 +110,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: lines.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: lines.Array.data[0]
       value: "\u042F \u0442\u0443\u0442 \u0441\u043F\u043B\u044E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: '"NJ DTLM NFR CVTIYJ'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: Z execm pltcm nhtnbq ujl yf cdfhyjt ltkj Pf k.,e. hf,jntyre z ,thecmz
+        cvtkj Dsgjkyznm cdfhyst ids? vj;yj kt;f? cnjz Vyt b rhbpbc yt gjxtv euflfqnt
+        rnj z Cdfhobr cdfhobr gfhtym hf,jnzobq Cdfhobr cdfhobr 'ktrnhjljd zobr Dct
+        rnj [jxtn ltytu vyjuj gjkexfnm Cdfhobrjv rjytxyj gecnm vtxnftn cnfnm "nj
+        z rcnf Ktutylfhyz gskm rfrfz nj yE DJN CBLB LP NT,T YF DTXTH
       objectReference: {fileID: 0}
     - target: {fileID: 8049719664338303134, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_Size.x
