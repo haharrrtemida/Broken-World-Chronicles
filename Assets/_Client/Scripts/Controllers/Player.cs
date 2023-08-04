@@ -6,13 +6,14 @@ public class Player : PersistentSingleton<Player>
     [SerializeField] private PlayerMotor _movement;
     [SerializeField] private Transform _pointForItems;
     [SerializeField] private PlayerState _currentState;
+    [SerializeField] private CharacterTextBox _characterTextBox;
 
     public Interectable CurrentInteractable { get; set; }
     public PlayerMotor Movement => _movement;
     public PlayerState CurrentState => _currentState;   
+    public CharacterTextBox CharacterTextBox => _characterTextBox;  
 
     public Vector2 spawnPosition;
-    
 
     public void Initialize()
     {

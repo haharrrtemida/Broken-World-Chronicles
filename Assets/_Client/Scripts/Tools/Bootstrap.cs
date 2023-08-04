@@ -2,7 +2,6 @@
 
 public class Bootstrap : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
     private void Start()
     {
         GameManager.Instance.Initialize();

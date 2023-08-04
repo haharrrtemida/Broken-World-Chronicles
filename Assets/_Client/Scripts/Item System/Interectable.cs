@@ -10,12 +10,11 @@ public abstract class Interectable : MonoBehaviour
     protected virtual void OnMouseDown()
     {
         print("Mouse clicked on " + gameObject.name);
-        //Player.Instance.CurrentInteractable = this;
     }
 
     public virtual void Interact()
     {
         print(gameObject.name + ": Interact!");
-        FindObjectOfType<CharacterTextBox>().SetText(_lines);
+        Player.Instance.CharacterTextBox.SetText(_lines);
     }
 }
