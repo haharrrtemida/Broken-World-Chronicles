@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : PersistentSingleton<ScenesManager>
 {
     [SerializeField] private GameObject _player;
-    [SerializeField] private LevelSO _activeLevel;
 
     public void Initialize()
     {
