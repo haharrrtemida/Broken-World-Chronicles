@@ -18,33 +18,36 @@ public class InputManager : PersistentSingleton<InputManager>
         _playerActions = _playerInput.Player;
         _UIActions = _playerInput.UI;
 
-        _playerInput.Player.Move.performed += context => SetTarget();
+        _playerInput.Player.Move.performed += context => OnMouseClick();
         _playerInput.Player.OpenInventory.performed += context => OpenInventory();
         _UIActions.Enable();
     }
 
-    private void SetTarget()
+    private void OnMouseClick()
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Camera.main.transform.forward, 20);
+        
+        Player.Instance.CurrentInteractable = SetTarget(mouseWorldPosition);
+        Debug.Log("Change Target to: " + Target);
 
-        Debug.DrawLine(mouseWorldPosition, mouseWorldPosition + Camera.main.transform.forward * 20, Color.red, 100);
+        Player.Instance.Move(Target);
+    }
+
+    private Interectable SetTarget(Vector3 position)
+    {
         Interectable selectedInteractable = null;
-
+        RaycastHit2D hit = Physics2D.Raycast(position, Camera.main.transform.forward, 20);
         if (hit && hit.transform.TryGetComponent(out selectedInteractable))
         {
-            Transform point = selectedInteractable.InteractionPoint;
-            Target = point.position;
+            if (selectedInteractable is Zone) selectedInteractable.Interact();
+            else Target = selectedInteractable.InteractionPoint.position;
         }
         else
         {
-            Target = mouseWorldPosition;
+            Target = position;
         }
-        Player.Instance.CurrentInteractable = selectedInteractable;
-        
-        Debug.Log("Change Target to: " + Target);
-        Player.Instance.Move(Target);
+        return selectedInteractable;
     }
 
     private void OnEnable()

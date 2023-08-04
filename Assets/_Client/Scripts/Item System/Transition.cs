@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Transition : Zone
+public class Transition : Interectable
 {
     [SerializeField] private Transform _exitPosition;
     [SerializeField] private Transform _cameraExitPosition;
