@@ -35,7 +35,7 @@ public class PlayerMotor : MonoBehaviour
 
     private void Update()
     {
-        if (IsReachDestination)
+        if (IsReachDestination && Player.Instance.CurrentState == PlayerState.Moving)
         {
             OnReachDestination?.Invoke();   
         }

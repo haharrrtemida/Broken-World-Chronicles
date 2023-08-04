@@ -1,6 +1,7 @@
 using Artemida.Tools;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InputManager : PersistentSingleton<InputManager>
 {
@@ -24,7 +25,24 @@ public class InputManager : PersistentSingleton<InputManager>
 
     private void SetTarget()
     {
-        Target = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Camera.main.transform.forward, 20);
+
+        Debug.DrawLine(mouseWorldPosition, mouseWorldPosition + Camera.main.transform.forward * 20, Color.red, 100);
+        Interectable selectedInteractable = null;
+
+        if (hit && hit.transform.TryGetComponent(out selectedInteractable))
+        {
+            Transform point = selectedInteractable.InteractionPoint;
+            Target = point.position;
+        }
+        else
+        {
+            Target = mouseWorldPosition;
+        }
+        Player.Instance.CurrentInteractable = selectedInteractable;
+        
         Debug.Log("Change Target to: " + Target);
         Player.Instance.Move(Target);
     }

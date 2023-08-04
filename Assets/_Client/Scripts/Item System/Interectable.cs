@@ -2,18 +2,20 @@ using UnityEngine;
 
 public abstract class Interectable : MonoBehaviour
 {
-    [SerializeField] protected string[] lines;
+    [SerializeField] protected string[] _lines;
+    [SerializeField] private Transform _interactionPoint;
+
+    public Transform InteractionPoint => _interactionPoint;
 
     protected virtual void OnMouseDown()
     {
         print("Mouse clicked on " + gameObject.name);
-        Interact();
+        //Player.Instance.CurrentInteractable = this;
     }
 
-    protected virtual void Interact()
+    public virtual void Interact()
     {
         print(gameObject.name + ": Interact!");
-        FindObjectOfType<CharacterTextBox>().SetText(lines);
-
+        FindObjectOfType<CharacterTextBox>().SetText(_lines);
     }
 }

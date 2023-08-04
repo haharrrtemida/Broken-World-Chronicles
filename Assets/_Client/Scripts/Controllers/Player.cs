@@ -7,6 +7,7 @@ public class Player : PersistentSingleton<Player>
     [SerializeField] private Transform _pointForItems;
     [SerializeField] private PlayerState _currentState;
 
+    public Interectable CurrentInteractable { get; set; }
     public PlayerMotor Movement => _movement;
     public PlayerState CurrentState => _currentState;   
 
@@ -22,6 +23,14 @@ public class Player : PersistentSingleton<Player>
 
     private void OnReachDestination()
     {
+        print("Player: Я достиг заданной точки");
+        if (CurrentInteractable)
+        {
+            CurrentInteractable.Interact();
+            print("Player: Взаимодействую с " + CurrentInteractable.gameObject.name);
+        }
+
+        CurrentInteractable = null;
         SetPlayerState(PlayerState.Idle);
     }
 

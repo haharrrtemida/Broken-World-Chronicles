@@ -5,18 +5,15 @@ public class Transition : Zone
 {
     [SerializeField] private Transform _exitPosition;
     [SerializeField] private Transform _cameraExitPosition;
-    [SerializeField] private float _activateDistances;
 
-
-    protected override void Interact()
+    public override void Interact()
     {
         base.Interact();
         UIManager.Instance.TransitionAnimation.CurrentTransition = this;
         StartTransition();
     }   
-    public bool DistanceToPlayer => Vector2.Distance(transform.position, Player.Instance.transform.position) <= _activateDistances;
 
-    public void ff()
+    public void DoTransition()
     {
         GameManager.Instance.UpdateGameState(GameState.Transition);
         Player.Instance.Movement.TeleportToPoint(_exitPosition.position);
@@ -29,4 +26,4 @@ public class Transition : Zone
     {
         UIManager.Instance.StartAnimationTransition();
     }
-}   
+}

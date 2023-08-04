@@ -24,7 +24,7 @@ public class TransitionAnimation : MonoBehaviour
 
     public void ChangeLocation()
     {
-        _currentTransition.ff();
+        _currentTransition.DoTransition();
     }
 
     public void EndAnimationTransition()
