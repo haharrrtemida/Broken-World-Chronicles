@@ -24,11 +24,11 @@ public class Player : PersistentSingleton<Player>
 
     private void OnReachDestination()
     {
-        print("Player: Я достиг заданной точки");
+        print("Player: Target achieved");
         if (CurrentInteractable)
         {
             CurrentInteractable.Interact();
-            print("Player: Взаимодействую с " + CurrentInteractable.gameObject.name);
+            print("Player: interaction with" + CurrentInteractable.gameObject.name);
         }
 
         CurrentInteractable = null;

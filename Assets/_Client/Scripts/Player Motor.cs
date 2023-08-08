@@ -5,9 +5,13 @@ using System;
 public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Animator _playerAnimator;
 
     public event Action OnReachDestination;
+    public float _angel;
+
     private Vector2 _targetPosition;
+    private bool isTurned;
 
     public void Initialize()
     {
@@ -17,6 +21,7 @@ public class PlayerMotor : MonoBehaviour
     private void StopOnReachDestination()
     {
         _agent.isStopped = true;
+        isTurned = false;
     }
 
     public void Move(Vector2 position)
@@ -24,6 +29,17 @@ public class PlayerMotor : MonoBehaviour
         _targetPosition = position;
         _agent.isStopped = false;
         _agent.SetDestination(_targetPosition);
+       _angel = Vector2.Angle(_targetPosition, transform.position);
+       if ((_angel > 90 || _angel > -90) && !isTurned)
+        {
+            _playerAnimator.gameObject.transform.localScale *= new Vector2(-1, 1);
+            isTurned = false;
+        }
+        else if (!isTurned)
+        {
+            _playerAnimator.gameObject.transform.localScale *= new Vector2(-1, 1);
+            isTurned = true;   
+        }
     }
 
     public void TeleportToPoint(Vector2 position)
@@ -37,11 +53,9 @@ public class PlayerMotor : MonoBehaviour
     {
         if (IsReachDestination && Player.Instance.CurrentState == PlayerState.Moving)
         {
-            OnReachDestination?.Invoke();   
+            OnReachDestination?.Invoke();
         }
     }
 
-    public bool IsReachDestination => Vector2.Distance(transform.position, _targetPosition) <= _agent.stoppingDistance;
-
-    public bool IsMoving() => !_agent.isStopped;
+    private bool IsReachDestination => Vector2.Distance(transform.position, _targetPosition) <= _agent.stoppingDistance;
 }
