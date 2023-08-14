@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationPlayer
+public class AnimationPlayer : MonoBehaviour
 {
     
 }

@@ -346,12 +346,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -210193098, guid: 69a96a0958818b64fb81e0ef3422e09c, type: 3}
+  m_Sprite: {fileID: -551609693, guid: 4355c01bba580eb42ab47618ad3d0f69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.3, y: 0.3}
+  m_Size: {x: 0.25, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _agent: {fileID: 6674454860637726041}
   _playerAnimator: {fileID: 1533557099518802051}
+  _angel: 0
 --- !u!212 &1589636587454666490
 SpriteRenderer:
   m_ObjectHideFlags: 0

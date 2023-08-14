@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 69a96a0958818b64fb81e0ef3422e09c
+guid: 4355c01bba580eb42ab47618ad3d0f69
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -107,31 +107,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RageWalk_0
+      name: RageWalkLeft_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 165
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 797bf2cbfc2d45d4981c1547fc05b198
-      internalID: -210193098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RageWalk_1
-      rect:
-        serializedVersion: 2
-        x: 44
+        x: 5
         y: 164
         width: 31
         height: 30
@@ -142,38 +121,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d9491b467caeb541b32a6301bc5677e
-      internalID: -206684135
+      spriteID: 6b07a1f46e4e6a24eb78a21ef9909450
+      internalID: 1969994257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_2
+      name: RageWalkLeft_1
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 165
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfb19334db996f458c0fec14490c308
+      internalID: 902275038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkLeft_2
       rect:
         serializedVersion: 2
         x: 85
-        y: 165
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 859d85e50c2d7e441b980ec5f4878bfc
-      internalID: 1148548634
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RageWalk_3
-      rect:
-        serializedVersion: 2
-        x: 124
         y: 164
         width: 31
         height: 30
@@ -184,80 +163,38 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 407954e392e9dab4bb343f8d10b681c0
-      internalID: -1429558949
+      spriteID: 454fd8a276e7b3240b9a3e567680f6ee
+      internalID: 2067829356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_4
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 125
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1acd2deb972f8904ca3fbdf3e7035c5a
-      internalID: -371601098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RageWalk_5
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 124
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a55c3ffd4b807be4eb113e340b6eff6c
-      internalID: 2008517024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RageWalk_6
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 125
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 526c2eb999170f544a664640504c18be
-      internalID: -773123831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RageWalk_7
+      name: RageWalkLeft_3
       rect:
         serializedVersion: 2
         x: 126
+        y: 165
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5092966cfa21e143829252f03680053
+      internalID: 783054378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkLeft_4
+      rect:
+        serializedVersion: 2
+        x: 4
         y: 124
         width: 30
         height: 30
@@ -268,18 +205,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a58d9a9792dd63147a9bb6f53eea19e4
-      internalID: 1986846875
+      spriteID: 10798cb7a24488b4b885623bb51a2d4a
+      internalID: -627820821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_8
+      name: RageWalkLeft_5
       rect:
         serializedVersion: 2
-        x: 6
-        y: 85
+        x: 42
+        y: 125
         width: 32
         height: 30
       alignment: 0
@@ -289,17 +226,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2f31bc6a7375fa4f95b1303860a1a1a
-      internalID: 1336042579
+      spriteID: 8a2c1e953967d4b42b182aa30fc084cc
+      internalID: -453241351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_9
+      name: RageWalkLeft_6
       rect:
         serializedVersion: 2
-        x: 48
+        x: 84
+        y: 124
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8472b3693ff2f40bccff1696d2f4c3
+      internalID: 1217327797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkLeft_7
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 125
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dffbf07c79bb404a8b1f093327b9ad9
+      internalID: -1384302967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkLeft_8
+      rect:
+        serializedVersion: 2
+        x: 7
         y: 84
         width: 25
         height: 30
@@ -310,17 +289,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da77fdbce53b80349a34f1253e66c6db
-      internalID: 2048344569
+      spriteID: e4444da46b7c6894089b54423624a4ea
+      internalID: -551609693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_10
+      name: RageWalkLeft_9
       rect:
         serializedVersion: 2
-        x: 89
+        x: 47
         y: 85
         width: 24
         height: 30
@@ -331,17 +310,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f68c06d639e1b54aaafc619f607da76
-      internalID: -2031201902
+      spriteID: bc23b9a290316244a84f452b7dc27072
+      internalID: -1373830557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_11
+      name: RageWalkLeft_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 87
         y: 84
         width: 25
         height: 30
@@ -352,19 +331,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c67e719647034fc41b9774c0d0ac231f
-      internalID: -77751928
+      spriteID: bf80ca28e564aff4d96cef8d9c42cad8
+      internalID: -1629470727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_12
+      name: RageWalkLeft_11
       rect:
         serializedVersion: 2
-        x: 6
-        y: 45
-        width: 29
+        x: 122
+        y: 85
+        width: 32
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -373,17 +352,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46f67ae698223cf4785799e0429d72bb
-      internalID: 1622930114
+      spriteID: 4b760944caa437e439b9aba08b4677f5
+      internalID: 1447526151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_13
+      name: RageWalkLeft_12
       rect:
         serializedVersion: 2
-        x: 46
+        x: 4
         y: 44
         width: 30
         height: 30
@@ -394,17 +373,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 730d3e8c6964bfb43ad14841af78a94a
-      internalID: -1132023896
+      spriteID: 6907d0a7136e46745bc0b19a6ffb5810
+      internalID: -461811928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_14
+      name: RageWalkLeft_13
       rect:
         serializedVersion: 2
-        x: 86
+        x: 42
         y: 45
         width: 32
         height: 30
@@ -415,17 +394,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cac664275ed06b3469b7ec903813c59e
-      internalID: -898962316
+      spriteID: cea499b27da76c047bfeb3275a24167a
+      internalID: 956543901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_15
+      name: RageWalkLeft_14
       rect:
         serializedVersion: 2
-        x: 126
+        x: 84
         y: 44
         width: 30
         height: 30
@@ -436,19 +415,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fd903f2a74429c4d9841fcfa4c9727e
-      internalID: -552368783
+      spriteID: 04032d3304168bf45b6f7fdd7d76467a
+      internalID: -620330138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_16
+      name: RageWalkLeft_15
       rect:
         serializedVersion: 2
-        x: 4
-        y: 5
-        width: 30
+        x: 125
+        y: 45
+        width: 29
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -457,17 +436,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: decf9767a68963748bbc6de34f99f4be
-      internalID: -785269305
+      spriteID: 22f7e0c46c6ace146804bde6ca959935
+      internalID: -1300579346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_17
+      name: RageWalkLeft_16
       rect:
         serializedVersion: 2
-        x: 44
+        x: 5
         y: 4
         width: 31
         height: 30
@@ -478,17 +457,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e3cc59a63ee2b549b494d21781b9bb4
-      internalID: -1882325773
+      spriteID: 6393eee08163a164694f1b5cdf68f8ee
+      internalID: -1404018331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_18
+      name: RageWalkLeft_17
       rect:
         serializedVersion: 2
-        x: 86
+        x: 46
         y: 5
         width: 28
         height: 30
@@ -499,17 +478,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e057acca6330a3f4aa9ab7434732cd1f
-      internalID: 313078870
+      spriteID: 63bafa61d9a3b214592f290b28a16d79
+      internalID: 1437961000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RageWalk_19
+      name: RageWalkLeft_18
       rect:
         serializedVersion: 2
-        x: 124
+        x: 85
         y: 4
         width: 31
         height: 30
@@ -520,8 +499,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5a484f4aba1594188a41eb52701931
-      internalID: 95437792
+      spriteID: 16f92f7d64744fd4c823d6e6bfc8b1a5
+      internalID: 942838972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RageWalkLeft_19
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 5
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0986a1947744d8848971acb9cc64f86e
+      internalID: -1088331061
       vertices: []
       indices: 
       edges: []
@@ -537,26 +537,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      RageWalk_13: -1132023896
-      RageWalk_7: 1986846875
-      RageWalk_12: 1622930114
-      RageWalk_9: 2048344569
-      RageWalk_8: 1336042579
-      RageWalk_3: -1429558949
-      RageWalk_14: -898962316
-      RageWalk_15: -552368783
-      RageWalk_2: 1148548634
-      RageWalk_1: -206684135
-      RageWalk_16: -785269305
-      RageWalk_10: -2031201902
-      RageWalk_19: 95437792
-      RageWalk_4: -371601098
-      RageWalk_6: -773123831
-      RageWalk_0: -210193098
-      RageWalk_5: 2008517024
-      RageWalk_11: -77751928
-      RageWalk_17: -1882325773
-      RageWalk_18: 313078870
+      RageWalkLeft_6: 1217327797
+      RageWalkLeft_12: -461811928
+      RageWalkLeft_10: -1629470727
+      RageWalkLeft_5: -453241351
+      RageWalkLeft_15: -1300579346
+      RageWalkLeft_7: -1384302967
+      RageWalkLeft_16: -1404018331
+      RageWalkLeft_3: 783054378
+      RageWalkLeft_0: 1969994257
+      RageWalkLeft_8: -551609693
+      RageWalkLeft_11: 1447526151
+      RageWalkLeft_14: -620330138
+      RageWalkLeft_1: 902275038
+      RageWalkLeft_9: -1373830557
+      RageWalkLeft_19: -1088331061
+      RageWalkLeft_17: 1437961000
+      RageWalkLeft_13: 956543901
+      RageWalkLeft_2: 2067829356
+      RageWalkLeft_18: 942838972
+      RageWalkLeft_4: -627820821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
