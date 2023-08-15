@@ -4,8 +4,8 @@ public class AnimationPlayer : MonoBehaviour
 {
     [SerializeField] private Animator _playerAnimator;
 
-    [SerializeField] private const string _ANIMATOR_MOVE_X = "AnimMoveX";
-    [SerializeField] private const string _ANIMATOR_MOVE_Y = "AnimMoveY";
+    private const string _ANIMATOR_MOVE_X = "AnimMoveX";
+    private const string _ANIMATOR_MOVE_Y = "AnimMoveY";
 
     public void ResetParam()
     {
