@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Jeans
   _icon: {fileID: 21300000, guid: a9a48226c503fbc46bc7a4ba303fb5e1, type: 3}
-  _motherPrefab: {fileID: 7713019380665345677, guid: 54b11ef158c9f894e9150494c47f76ff, type: 3}
+  _About: "\u0423\u0434\u043E\u0431\u043D\u044B\u0435 \u0438 \u0441\u0442\u0438\u043B\u044C\u043D\u044B\u0435"
+  _craftable: 0

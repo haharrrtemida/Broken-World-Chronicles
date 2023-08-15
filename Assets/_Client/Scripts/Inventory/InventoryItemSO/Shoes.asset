@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Shoes
   _icon: {fileID: 21300000, guid: 3d155b2a10c2f184e9da6feceec3898f, type: 3}
-  _motherPrefab: {fileID: 1333183816652834961, guid: d84a78f165dc2134a8062e44b54cb42f, type: 3}
+  _About: "\u0412 \u043D\u0438\u0445 \u043A\u043E\u043C\u0444\u043E\u0440\u0442\u043D\u043E
+    \u0445\u043E\u0434\u0438\u0442\u044C"
+  _craftable: 0

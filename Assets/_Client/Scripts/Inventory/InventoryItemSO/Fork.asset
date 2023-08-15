@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Fork
   _icon: {fileID: 21300000, guid: 16f313eac3b29bb4bb93d21202fc39f8, type: 3}
-  _motherPrefab: {fileID: 6150019711806572221, guid: d5d8a2185224e4c4c9c4e6ee77a9fc59, type: 3}
+  _About: "\u0421\u0442\u043E\u043B\u043E\u0432\u044B\u0439 \u043F\u0440\u0438\u0431\u043E\u0440"
+  _craftable: 1

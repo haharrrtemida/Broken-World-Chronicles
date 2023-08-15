@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,5 +67,11 @@ public class InventoryInterface : MonoBehaviour
     {
         _activeItem = null;
         _infoPanel.SetActive(false);
+    }
+
+    public void UseItem()
+    {
+        if (_activeItem != null && _activeItem.Craftable != true) InventoryManager.Instance.RemoveItem(_activeItem);
+        ScenesManager.Instance.ReloadInventory();
     }
 }
