@@ -20,6 +20,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
         _playerInput.Player.Move.performed += context => OnMouseClick();
         _playerInput.Player.OpenInventory.performed += context => OpenInventory();
+        _playerInput.Player.Pause.performed += context => OpenPause();
         _UIActions.Enable();
     }
 
@@ -80,5 +81,15 @@ public class InputManager : PersistentSingleton<InputManager>
     public void OpenInventory()
     {
         ScenesManager.Instance.OpenInventory();
+    }
+
+    public void OpenPause()
+    {
+        UIManager.Instance.OpenPause();
+    }
+
+    private void ClosePause()
+    {
+
     }
 }
