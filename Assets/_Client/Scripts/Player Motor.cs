@@ -5,11 +5,12 @@ using System;
 public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
-    [SerializeField] private Animator _playerAnimator;
+    [SerializeField] private AnimationPlayer _animationPlayer;
 
     public event Action OnReachDestination;
 
     private Vector2 _targetPosition;
+    public Vector2 TargetPosition => _targetPosition; 
 
     public void Initialize()
     {
@@ -19,8 +20,7 @@ public class PlayerMotor : MonoBehaviour
     private void StopOnReachDestination()
     {
         _agent.isStopped = true;
-        _playerAnimator.SetFloat("AnimMoveX", 0);
-        _playerAnimator.SetFloat("AnimMoveY", 0);
+        _animationPlayer.ResetParam();
     }
 
     public void Move(Vector2 position)
@@ -28,15 +28,7 @@ public class PlayerMotor : MonoBehaviour
         _targetPosition = position;
         _agent.isStopped = false;
         _agent.SetDestination(_targetPosition);
-        //position = new Vector2(position.x, position.y).normalized;
-
-        Vector2 direction = _targetPosition - (Vector2)transform.position;
-        direction.Normalize();
-        direction.x = Mathf.RoundToInt(direction.x);
-        direction.y = Mathf.RoundToInt(direction.y);
-
-        _playerAnimator.SetFloat("AnimMoveX", direction.x);
-        _playerAnimator.SetFloat("AnimMoveY", direction.y);
+        _animationPlayer.AnimationMove();
     }
 
     public void TeleportToPoint(Vector2 position)
