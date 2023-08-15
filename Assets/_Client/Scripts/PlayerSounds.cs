@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
 {
-    private const string _STEP_SOUND_PATH = "Sounds/StepSound";
+    private const string _STEP_SOUND_PATH = "Sounds/PlayerSounds/Steps/StepSound0";
 
     public void PlayStepSound() 
     {
-        AudioClip stepSoundClip = (AudioClip)Resources.Load(_STEP_SOUND_PATH);
-        AudioSystem.Instance.PlaySound(stepSoundClip, transform.position);
+        AudioClip CurrentStepSoundClip = (AudioClip)Resources.Load(_STEP_SOUND_PATH + Random.Range(1,7));
+        AudioSystem.Instance.PlaySound(CurrentStepSoundClip, transform.position);
     }
 }
