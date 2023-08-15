@@ -78,18 +78,13 @@ public class InputManager : PersistentSingleton<InputManager>
         ToggleActionMap(_playerActions);
     }
 
-    public void OpenInventory()
+    private void OpenInventory()
     {
         ScenesManager.Instance.OpenInventory();
     }
 
-    public void OpenPause()
+    private void OpenPause()
     {
         UIManager.Instance.OpenPause();
-    }
-
-    private void ClosePause()
-    {
-
     }
 }
