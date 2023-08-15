@@ -28,9 +28,15 @@ public class PlayerMotor : MonoBehaviour
         _targetPosition = position;
         _agent.isStopped = false;
         _agent.SetDestination(_targetPosition);
-        position = new Vector2(position.x, position.y).normalized;
-        _playerAnimator.SetFloat("AnimMoveX", position.x);
-        _playerAnimator.SetFloat("AnimMoveY", position.y);
+        //position = new Vector2(position.x, position.y).normalized;
+
+        Vector2 direction = _targetPosition - (Vector2)transform.position;
+        direction.Normalize();
+        direction.x = Mathf.RoundToInt(direction.x);
+        direction.y = Mathf.RoundToInt(direction.y);
+
+        _playerAnimator.SetFloat("AnimMoveX", direction.x);
+        _playerAnimator.SetFloat("AnimMoveY", direction.y);
     }
 
     public void TeleportToPoint(Vector2 position)
