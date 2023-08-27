@@ -21,6 +21,7 @@ public class InputManager : PersistentSingleton<InputManager>
         _playerInput.Player.Move.performed += context => OnMouseClick();
         _playerInput.Player.OpenInventory.performed += context => OpenInventory();
         _playerInput.Player.UseItem.performed += context => UseItem();
+        _playerInput.Player.CraftPanel.performed += context => CraftPanel();
         _UIActions.Enable();
     }
 
@@ -86,5 +87,10 @@ public class InputManager : PersistentSingleton<InputManager>
     private void UseItem()
     {
         if (GameManager.Instance.GetGameState() == GameState.Inventory) FindObjectOfType<InventoryInterface>().UseItem();
+    }
+
+    private void CraftPanel()
+    {
+        if (GameManager.Instance.GetGameState() == GameState.Inventory) FindObjectOfType<InventoryInterface>().ShowOrCloseCraftPanel();
     }
 }
