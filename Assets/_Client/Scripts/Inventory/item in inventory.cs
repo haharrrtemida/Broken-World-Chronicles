@@ -11,7 +11,7 @@ public class itemininventory : MonoBehaviour
 
     private void Start()
     {
-        _aboutButton.onClick.AddListener(ShowPanelAbout);
+        _aboutButton.onClick.AddListener(ActiveItem);
     }
 
     public void NewItem(InventoryItemSO item)
@@ -19,7 +19,7 @@ public class itemininventory : MonoBehaviour
         _item = item;
     }
 
-    private void ShowPanelAbout()
+    private void ActiveItem()
     {
         OnItemClicked?.Invoke(_item);
     }

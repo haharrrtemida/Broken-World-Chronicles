@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: T-Shirt
   _icon: {fileID: 21300000, guid: 606e04057e5c8114ba7c288c790652c3, type: 3}
-  _motherPrefab: {fileID: 438743202905185642, guid: f4104adccb88d7e40b31f091101dc057, type: 3}
+  _About: "\u041A\u0430\u043A\u0430\u044F \u043A\u0440\u0430\u0441\u0438\u0432\u0430\u044F!
+    \u041A\u0430\u043A \u0440\u0430\u0437 \u043C\u043E\u0439 \u0440\u0430\u0437\u043C\u0435\u0440"
+  _craftable: 0

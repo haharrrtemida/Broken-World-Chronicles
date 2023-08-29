@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Eggs
   _icon: {fileID: 21300000, guid: 81bf077382cc2e7459feaccddce5b006, type: 3}
-  _motherPrefab: {fileID: 1643759514584231326, guid: 873ec5a3c00b1ca4bb07f709dfced996, type: 3}
+  _About: "\u041C\u043C\u043C\u043C\u043C... \u0412\u043A\u0443\u0441\u043D\u043E.
+    \u0414\u043B\u044F \u0435\u0434\u044B \u0442\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044F
+    \u0432\u0438\u043B\u043A\u0430"
+  _craftable: 1

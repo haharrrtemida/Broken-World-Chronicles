@@ -6,9 +6,6 @@ namespace Artemida.Tools
     {
         [SerializeField] private AudioSource _musicSource;
         [SerializeField] private AudioSource _soundSource;
-        [SerializeField] private AudioBase _audioBase;
-
-        public AudioBase AudioBase => _audioBase;
 
         public void PlayMusic(AudioClip clip)
         {

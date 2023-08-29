@@ -65,8 +65,14 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
     {
         if (GameManager.Instance.GetGameState() == GameState.Inventory)
         {
-        SceneManager.UnloadSceneAsync(SceneName.Inventory.ToString());
-        GameManager.Instance.UpdateGameState(GameState.Game);
+            SceneManager.UnloadSceneAsync(SceneName.Inventory.ToString());
+            GameManager.Instance.UpdateGameState(GameState.Game);
         }
+    }
+
+    public void ReloadInventory()
+    {
+        CloseInventory();
+        OpenInventory();
     }
 }
