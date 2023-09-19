@@ -20,7 +20,7 @@ public class InputManager : PersistentSingleton<InputManager>
 
         _playerInput.Player.Move.performed += context => OnMouseClick();
         _playerInput.Player.OpenInventory.performed += context => OpenInventory();
-        _playerInput.Player.UseItem.performed += context => UseItem();
+        _playerInput.Player.Pause.performed += context => OpenPause();
         _UIActions.Enable();
     }
 
@@ -78,13 +78,13 @@ public class InputManager : PersistentSingleton<InputManager>
         ToggleActionMap(_playerActions);
     }
 
-    public void OpenInventory()
+    private void OpenInventory()
     {
         ScenesManager.Instance.OpenInventory();
     }
 
-    private void UseItem()
+    private void OpenPause()
     {
-        if (GameManager.Instance.GetGameState() == GameState.Inventory) FindObjectOfType<InventoryInterface>().UseItem();
+        UIManager.Instance.OpenPause();
     }
 }

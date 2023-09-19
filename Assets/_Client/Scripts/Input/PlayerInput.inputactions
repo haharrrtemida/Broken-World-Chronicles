@@ -24,9 +24,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Use Item",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "0fdc7e44-92f6-451d-9ad7-1c7cb7d218a7",
+                    "id": "8bbbe5e9-160b-41c1-a702-87442fa1fff9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -51,19 +51,19 @@
                     "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Mouse and keyboard",
                     "action": "Open Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "2704514b-09b7-4093-9302-2f9805c31477",
-                    "path": "<Keyboard>/e",
+                    "id": "eb8c0e57-8af0-4da3-949b-614a7007ee7c",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and keyboard",
-                    "action": "Use Item",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
