@@ -29,7 +29,7 @@ public class CharacterTextBox : MonoBehaviour
         for (index = 0; index < lines.Length; index++)
         {
             StartCoroutine(TypeLine(index));
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(3);
             _textMeshPro.text = string.Empty;
         }
         lines = null;
