@@ -8,8 +8,9 @@ public class CharacterTextBox : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private float _textSpeed;
     private string[] lines;
+    private int index;
 
-    private void Start()
+    public void Initialize ()
     {
         _textMeshPro.text = string.Empty;
     }
@@ -25,23 +26,27 @@ public class CharacterTextBox : MonoBehaviour
 
     private IEnumerator PushText()
     { 
-        for (int i = 0; i < lines.Length; i++)
+        for (index = 0; index < lines.Length; index++)
         {
-            StartCoroutine(TypeLine(i));
+            StartCoroutine(TypeLine(index));
             yield return new WaitForSeconds(5);
             _textMeshPro.text = string.Empty;
         }
-
+        lines = null;
     }
 
     public void SetText(string[] lines)
     {
-        if (this.lines != lines)
+        if (lines != this.lines)
         {
-            StopAllCoroutines();
-            _textMeshPro.text = string.Empty;
             this.lines = lines;
             StartCoroutine(PushText());
+        }
+        else 
+        {
+            StopCoroutine(TypeLine(index));
+            _textMeshPro.text = string.Empty;
+            _textMeshPro.text = lines[index];
         }
     }
 }

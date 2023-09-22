@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 1063691682614849777}
-  _textSpeed: 0.03
+  _textSpeed: 0.07
 --- !u!1 &3399967530661598698
 GameObject:
   m_ObjectHideFlags: 0

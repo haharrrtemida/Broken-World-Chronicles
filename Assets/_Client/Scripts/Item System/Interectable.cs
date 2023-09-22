@@ -15,6 +15,5 @@ public abstract class Interectable : MonoBehaviour
     public virtual void Interact()
     {
         print(gameObject.name + ": Interact!");
-        Player.Instance.CharacterTextBox.SetText(_lines);
     }
 }

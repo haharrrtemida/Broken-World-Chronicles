@@ -20,6 +20,7 @@ public class Player : PersistentSingleton<Player>
         _movement.Initialize();
         SetPlayerState(PlayerState.Idle);
         _movement.OnReachDestination += OnReachDestination;
+        _characterTextBox.Initialize();
     }
 
     private void OnReachDestination()
