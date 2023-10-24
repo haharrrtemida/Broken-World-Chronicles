@@ -8,6 +8,7 @@ public class Bootstrap : MonoBehaviour
         InputManager.Instance.Initialize();
         ScenesManager.Instance.Initialize();
         InventoryManager.Instance.Initialize();
+        CharactersManager.Instance.Initialize();
         ScenesManager.Instance.LoadMainMenu();
     }
 }

@@ -34,12 +34,15 @@ public class GameManager : PersistentSingleton<GameManager>
             case GameState.OpenLevel:
                 break;
             case GameState.Game:
-                //if (!Player.Instance)
                     Player.Instance.Initialize();
                 break;
             case GameState.Pause:
                 break;
             case GameState.Inventory:
+                break;
+            case GameState.ChoiceCharacter:
+                break;
+            case GameState.CharacterMenu:
                 break;
         }
     }

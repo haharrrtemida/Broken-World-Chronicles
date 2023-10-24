@@ -21,6 +21,7 @@ public class InputManager : PersistentSingleton<InputManager>
         _playerInput.Player.Move.performed += context => OnMouseClick();
         _playerInput.Player.OpenInventory.performed += context => OpenInventory();
         _playerInput.Player.Pause.performed += context => OpenPause();
+        _playerInput.Player.OpenChoiceCharacter.performed += context => OpenChoiceCharacter();
         _UIActions.Enable();
     }
 
@@ -49,6 +50,11 @@ public class InputManager : PersistentSingleton<InputManager>
             Target = position;
         }
         return selectedInteractable;
+    }
+
+    private void OpenChoiceCharacter()
+    {
+        UIManager.Instance.OpenChoiceCharacter();
     }
 
     private void OnEnable()

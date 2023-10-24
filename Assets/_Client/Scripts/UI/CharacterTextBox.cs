@@ -1,52 +1,74 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class CharacterTextBox : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textMeshPro;
+    [SerializeField] private TextMeshProUGUI _textComponent;
     [SerializeField] private float _textSpeed;
-    private string[] lines;
+
+    private string[] _sentences;
     private int index;
 
-    public void Initialize ()
+    public void Initialize() 
     {
-        _textMeshPro.text = string.Empty;
+        _textComponent.text = string.Empty;
+    }   
+
+    private void StartDialogue()
+    {
+        index = 0;
+        StartCoroutine(TypeLine());
     }
 
-    private IEnumerator TypeLine(int numberLine)
+    private IEnumerator TypeLine() 
     {
-        foreach (char c in lines[numberLine])
+        foreach (char c in _sentences[index].ToCharArray())
         {
-            _textMeshPro.text += c;
+            _textComponent.text += c;
             yield return new WaitForSeconds(_textSpeed);
         }
     }
 
-    private IEnumerator PushText()
-    { 
-        for (index = 0; index < lines.Length; index++)
+    private void NextLine()
+    {
+         if(_textComponent.text == _sentences[index])
         {
-            StartCoroutine(TypeLine(index));
-            yield return new WaitForSeconds(3);
-            _textMeshPro.text = string.Empty;
+            if(index < _sentences.Length - 1)
+            {
+                index++;
+                _textComponent.text = string.Empty;
+                StartCoroutine(TypeLine());
+            }
+            else
+            {
+                _sentences = null;
+                gameObject.SetActive(false);
+            }
         }
-        lines = null;
+        else 
+        {
+            StopAllCoroutines();
+            _textComponent.text = _sentences[index];
+        }
     }
 
     public void SetText(string[] lines)
     {
-        if (lines != this.lines)
+        if(_sentences != lines)
         {
-            this.lines = lines;
-            StartCoroutine(PushText());
+            _sentences = lines;
+            StartDialogue();
         }
+
+        if(_textComponent.text == _sentences[index])
+        {
+            NextLine();
+        }    
         else 
         {
-            StopCoroutine(TypeLine(index));
-            _textMeshPro.text = string.Empty;
-            _textMeshPro.text = lines[index];
+            StopAllCoroutines();
+            _textComponent.text = _sentences[index];
         }
     }
 }

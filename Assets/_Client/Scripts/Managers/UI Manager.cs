@@ -6,6 +6,7 @@ public class UIManager : PersistentSingleton<UIManager>
     [SerializeField] private GameObject AnimationTransition;
     [SerializeField] private TransitionAnimation _transitionAnimation;
     [SerializeField] private Animator _animator;
+    [SerializeField] private ChoiceCharacter _choiceCharacter;
     [SerializeField] private Pause _pause;
 
     const string TRANSITION_TRIGGER_PARAM = "TransitionComplete";
@@ -30,7 +31,22 @@ public class UIManager : PersistentSingleton<UIManager>
         }
         else
         {
-            _pause.ClosePause();
+            _pause.Close();
+        }
+    }
+
+    public void OpenChoiceCharacter()
+    {
+        if (GameManager.Instance.GetGameState() == GameState.Game)
+        {
+            GameManager.Instance.UpdateGameState(GameState.ChoiceCharacter);
+            Time.timeScale = 0.1f;
+            _choiceCharacter.gameObject.SetActive(true);
+            _choiceCharacter.InitializePanel();
+        }
+        else 
+        {
+            _choiceCharacter.Close();
         }
     }
 }

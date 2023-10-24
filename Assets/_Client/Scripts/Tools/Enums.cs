@@ -6,7 +6,9 @@ public enum GameState
     Game,
     Pause,
     Inventory,
-    Transition
+    Transition,
+    ChoiceCharacter,
+    CharacterMenu
 }
 
 public enum SceneName
@@ -28,4 +30,11 @@ public enum PlayerState
     Moving,
     Acting,
     Speaking
+}
+
+public enum Characters
+{
+    Oll,
+    Tun, 
+    Mia
 }

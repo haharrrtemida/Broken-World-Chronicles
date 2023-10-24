@@ -53,6 +53,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open Choice Character"",
+                    ""type"": ""Button"",
+                    ""id"": ""b90481c7-7b89-43d4-b67b-d775df0f02a6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -86,6 +95,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Mouse and keyboard"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3cd256c9-19a3-4f3a-b26b-8eb449cf7674"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and keyboard"",
+                    ""action"": ""Open Choice Character"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -692,6 +712,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_OpenInventory = m_Player.FindAction("Open Inventory", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_OpenChoiceCharacter = m_Player.FindAction("Open Choice Character", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -768,6 +789,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_OpenInventory;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_OpenChoiceCharacter;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -775,6 +797,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @OpenChoiceCharacter => m_Wrapper.m_Player_OpenChoiceCharacter;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -793,6 +816,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @OpenChoiceCharacter.started += instance.OnOpenChoiceCharacter;
+            @OpenChoiceCharacter.performed += instance.OnOpenChoiceCharacter;
+            @OpenChoiceCharacter.canceled += instance.OnOpenChoiceCharacter;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -806,6 +832,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @OpenChoiceCharacter.started -= instance.OnOpenChoiceCharacter;
+            @OpenChoiceCharacter.performed -= instance.OnOpenChoiceCharacter;
+            @OpenChoiceCharacter.canceled -= instance.OnOpenChoiceCharacter;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -973,6 +1002,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnOpenChoiceCharacter(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
