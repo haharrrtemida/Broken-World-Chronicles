@@ -3,6 +3,7 @@ using UnityEngine;
 
 public abstract class CharacterSO : ScriptableObject
 {
+
     private bool isCharacterOpen = false;
 
     public abstract void Activate();

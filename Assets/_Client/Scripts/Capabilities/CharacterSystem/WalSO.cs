@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Characters/Wal", fileName = "new Tum")]
 public class WalSO : CharacterSO
 {
+    private bool _wiresIsActive = false;
+
     public override void Activate()
     {
         MonoBehaviour.print("I am oll and i will somthing do");
@@ -17,5 +19,17 @@ public class WalSO : CharacterSO
     public void HZChtotoIwiee()
     {
         MonoBehaviour.print("fefee");
+    }
+
+    public void SwitchOnWires()
+    {
+        if (!_wiresIsActive)
+        {
+            Camera.main.cullingMask += (1 << LayerMask.NameToLayer("Wires"));
+        }
+        else
+        {
+            Camera.main.cullingMask -= (1 << LayerMask.NameToLayer("Wires"));
+        }
     }
 }

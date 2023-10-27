@@ -22,7 +22,7 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
         {
             _wal.SetActive(stateCharacter);
         }
-        if (character is TumSO)
+        else if (character is TumSO)
         {
             _tum.SetActive(stateCharacter);
         }
