@@ -1,15 +1,15 @@
 using UnityEngine.UI;
+using UnityEngine;
 
-public abstract class Character
+public abstract class CharacterSO : ScriptableObject
 {
-    public CapabilitiesSO[] _capabilities;
     private bool isCharacterOpen = false;
 
     public abstract void Activate();
 
-    public void SetActive(bool state)
+    public void SetActive(bool stateCharcter)
     {
-        isCharacterOpen = state;
+        isCharacterOpen = stateCharcter;
     }
 
     public void OpenUIElement(Button CharacterButton)

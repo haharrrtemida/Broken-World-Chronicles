@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Mia : Character
+public class MiaSO : CharacterSO
 {
     public override void Activate()
     {

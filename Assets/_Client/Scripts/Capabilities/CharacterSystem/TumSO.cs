@@ -1,8 +1,7 @@
 using UnityEngine;
-using System;
 
-[Serializable]
-public class Tun : Character
+[CreateAssetMenu(menuName = "Characters/Tum", fileName = "new Tum")]
+public class TumSO : CharacterSO
 {
     public override void Activate()
     {   
