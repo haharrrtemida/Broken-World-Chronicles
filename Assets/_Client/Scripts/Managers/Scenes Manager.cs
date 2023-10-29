@@ -52,12 +52,13 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
         LoadScene((SceneName)index);
     }
 
-    public void OpenInventory()
+    public void OpenInventory(InventoryMode mode)
     {
         if (GameManager.Instance.GetGameState() == GameState.Game)
         {
             LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
-         GameManager.Instance.UpdateGameState(GameState.Inventory);
+            InventoryManager.Instance.ChangeModeInventory(mode);
+            GameManager.Instance.UpdateGameState(GameState.Inventory);
         }
     }
 
@@ -70,9 +71,9 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
         }
     }
 
-    public void ReloadInventory()
+    public void ReloadInventory(InventoryMode mode)
     {
         CloseInventory();
-        OpenInventory();
+        OpenInventory(mode);
     }
 }

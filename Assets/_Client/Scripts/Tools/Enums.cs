@@ -29,3 +29,9 @@ public enum PlayerState
     Acting,
     Speaking
 }
+
+public enum InventoryMode
+{
+    Inventory,
+    Craft
+}

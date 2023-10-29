@@ -80,7 +80,11 @@ public class InputManager : PersistentSingleton<InputManager>
 
     private void OpenInventory()
     {
-        ScenesManager.Instance.OpenInventory();
+        ScenesManager.Instance.OpenInventory(InventoryMode.Inventory);
+    }
+    private void OpenCraft()
+    {
+        ScenesManager.Instance.OpenInventory(InventoryMode.Craft);
     }
 
     private void OpenPause()
