@@ -42,8 +42,14 @@ public class InputManager : PersistentSingleton<InputManager>
         RaycastHit2D hit = Physics2D.Raycast(position, Camera.main.transform.forward, 20);
         if (hit && hit.transform.TryGetComponent(out selectedInteractable))
         {
-            if (selectedInteractable is Zone) selectedInteractable.Interact();
-            else Target = selectedInteractable.InteractionPoint.position;
+            if (selectedInteractable is Zone)
+            {
+                selectedInteractable.Interact();
+            }
+            else
+            {
+                Target = selectedInteractable.InteractionPoint.position;
+            }
         }
         else
         {

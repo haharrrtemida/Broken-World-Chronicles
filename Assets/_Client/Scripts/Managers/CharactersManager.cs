@@ -28,13 +28,13 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
         }
     }
 
-    public void SelectOll()
+    public void SelectWal()
     {
         UpdateStateCharacters(Characters.Wal);
         _wal.Activate();
     }
 
-    public void SelectTun()
+    public void SelectTum()
     {
         UpdateStateCharacters(Characters.Tum);
         _tum.Activate();
@@ -44,6 +44,11 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
     {
         if(_currentCharacter == character) return;
         _currentCharacter = character;
+    }
+
+    public Characters GetStateCharacter()
+    {
+        return _currentCharacter;
     }
 
     public void OpenUIElement(Button ollButton, Button tunButton)

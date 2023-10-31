@@ -18,7 +18,7 @@ public class Player : PersistentSingleton<Player>
     public void Initialize()
     {
         _movement.Initialize();
-        SetPlayerState(PlayerState.Idle);
+        UpdatePlayerState(PlayerState.Idle);
         _movement.OnReachDestination += OnReachDestination;
         _characterTextBox.Initialize();
     }
@@ -33,7 +33,7 @@ public class Player : PersistentSingleton<Player>
         }
 
         CurrentInteractable = null;
-        SetPlayerState(PlayerState.Idle);
+        UpdatePlayerState(PlayerState.Idle);
     }
 
     public void MoveToSpawnPoint(Vector3 point)
@@ -46,11 +46,11 @@ public class Player : PersistentSingleton<Player>
         if (GameManager.Instance.GetGameState() == GameState.Game && _currentState != PlayerState.Acting && _currentState != PlayerState.Speaking)
         {
             _movement.Move(position);
-            SetPlayerState(PlayerState.Moving);
+            UpdatePlayerState(PlayerState.Moving);
         }
     }
 
-    public void SetPlayerState(PlayerState state)
+    public void UpdatePlayerState(PlayerState state)
     {
         _currentState = state;
     }

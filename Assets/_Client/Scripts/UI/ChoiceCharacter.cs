@@ -8,12 +8,12 @@ public class ChoiceCharacter : UITimeStopElement
 
     public void SelectOll()
     {
-        CharactersManager.Instance.SelectOll();
+        CharactersManager.Instance.SelectWal();
     }
 
     public void SelectTum()
     {
-        CharactersManager.Instance.SelectTun();
+        CharactersManager.Instance.SelectTum();
     }
     
     public void InitializePanel()

@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Characters/Wal", fileName = "new Tum")]
 public class WalSO : CharacterSO
 {
+    [HideInInspector] public bool isSwitch = false;
+
     private bool _wiresIsActive = false;
 
     public override void Activate()
@@ -30,6 +32,18 @@ public class WalSO : CharacterSO
         else
         {
             Camera.main.cullingMask -= (1 << LayerMask.NameToLayer("Wires"));
+        }
+    }
+
+    public void SwitchLight()
+    {
+        if (isSwitch)
+        {
+            isSwitch = false;
+        }
+        else
+        {
+            isSwitch = true;
         }
     }
 }
