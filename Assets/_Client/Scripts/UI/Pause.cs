@@ -3,6 +3,11 @@ using UnityEngine;
 public class Pause : UITimeStopElement
 {
 
+    public void Continue()
+    {
+        Close();    
+    }
+
     public void Save()
     {
 

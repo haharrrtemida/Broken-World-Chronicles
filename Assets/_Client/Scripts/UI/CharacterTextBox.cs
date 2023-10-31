@@ -55,12 +55,12 @@ public class CharacterTextBox : MonoBehaviour
 
     public void SetText(string[] lines)
     {
+        if (lines == null) return;
         if(_sentences != lines)
         {
             _sentences = lines;
             StartDialogue();
         }
-
         if(_textComponent.text == _sentences[index])
         {
             NextLine();
