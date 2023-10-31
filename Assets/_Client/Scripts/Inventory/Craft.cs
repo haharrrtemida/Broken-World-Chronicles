@@ -3,34 +3,47 @@ using UnityEngine;
 
 public class Craft : InventoryInterface
 {
-    protected List<InventoryItemSO> activeItems;
     private string craftItemsNames;
     [SerializeField] private CraftItem[] craftItems;
 
     protected override void ShowInfoPanel(InventoryItemSO item)
     {
-        activeItems.Add(item);
-        //_imagePanel.(Color.red); change image
-        for (int i = 0; i > activeItems.Count; i++)
+        if (_mode == InventoryMode.Craft)
         {
-            craftItemsNames = craftItemsNames + activeItems[i].GetSprite().ToString() + "+";
+            activeItems.Add(item);
+            //_imagePanel.(Color.red); change image
+            for (int i = 0; i > activeItems.Count; i++)
+            {
+                craftItemsNames = craftItemsNames + activeItems[i].Name().ToString() + "+";
+            }
+            _itemNamePanel.text = craftItemsNames;
+            _itemDescriptionPanel.text = "none";
+            _infoPanel.SetActive(true);
         }
-        _itemNamePanel.text = craftItemsNames;
-        _itemDescriptionPanel.text = "none";
     }
     protected void CraftLogik()
     {
-        for (int i = 0; i > activeItems.Count; i++)
+        if (_mode == InventoryMode.Craft)
         {
-            CraftItem item = craftItems[i];
-            if (activeItems == item.GetIngridients())
+            for (int i = 0; i > activeItems.Count; i++)
             {
-                InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
-                for (int a = 0; a > activeItems.Count; a++)
+                CraftItem item = craftItems[i];
+                if (activeItems == item.GetIngridients())
                 {
-                    InventoryManager.Instance.RemoveItem(activeItems[a]);
+                    InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
+                    for (int a = 0; a > activeItems.Count; a++)
+                    {
+                        InventoryManager.Instance.RemoveItem(activeItems[a]);
+                        print("CRAFTING.....");
+                    }
                 }
             }
         }
+    }
+
+    protected override void CloseInfoPanel() 
+    {
+        _activeItem = null;
+        _infoPanel.SetActive(false);
     }
 }

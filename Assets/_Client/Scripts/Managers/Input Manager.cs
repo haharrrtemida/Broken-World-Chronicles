@@ -94,10 +94,6 @@ public class InputManager : PersistentSingleton<InputManager>
     {
         ScenesManager.Instance.OpenInventory(InventoryMode.Inventory);
     }
-    private void OpenCraft()
-    {
-        ScenesManager.Instance.OpenInventory(InventoryMode.Craft);
-    }
 
     private void OpenPause()
     {

@@ -6,12 +6,12 @@ public abstract class Interectable : MonoBehaviour
     [SerializeField] private Transform _interactionPoint;
 
     public Transform InteractionPoint => _interactionPoint;
-
+    
     protected virtual void OnMouseDown()
     {
-        print("Mouse clicked on " + gameObject.name);
+       print("Mouse clicked on " + gameObject.name);
     }
-
+    
     public virtual void Interact()
     {
         print(gameObject.name + ": Interact!");

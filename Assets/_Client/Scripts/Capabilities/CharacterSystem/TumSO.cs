@@ -7,4 +7,9 @@ public class TumSO : CharacterSO
     {   
         MonoBehaviour.print("i am tun and i was activate"); 
     }
+
+    public void LoadCraft()
+    {
+        ScenesManager.Instance.OpenInventory(InventoryMode.Craft);
+    }
 }

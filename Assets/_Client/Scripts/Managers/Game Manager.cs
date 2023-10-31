@@ -42,8 +42,6 @@ public class GameManager : PersistentSingleton<GameManager>
                 break;
             case GameState.ChoiceCharacter:
                 break;
-            case GameState.CharacterMenu:
-                break;
         }
     }
 }

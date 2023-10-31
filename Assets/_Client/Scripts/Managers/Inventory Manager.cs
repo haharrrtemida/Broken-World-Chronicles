@@ -20,12 +20,14 @@ public class InventoryManager : PersistentSingleton<InventoryManager>
 
     public void AddItem(InventoryItemSO Item)
     {
+        print("Add to inv");
         _inventoryItems.Add(Item);
     }
 
     public void RemoveItem(InventoryItemSO Item)
     {
         _inventoryItems.Remove(Item);
+        ScenesManager.Instance.ReloadInventory(_mode);
     }
 
     public void CloseInventory()

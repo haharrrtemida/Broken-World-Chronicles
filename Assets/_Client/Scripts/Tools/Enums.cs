@@ -8,8 +8,7 @@ public enum GameState
     Pause,
     Inventory,
     Transition,
-    ChoiceCharacter,
-    CharacterMenu
+    ChoiceCharacter
 }
 
 public enum SceneName

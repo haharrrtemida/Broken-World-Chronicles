@@ -54,7 +54,7 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
 
     public void OpenInventory(InventoryMode mode)
     {
-        if (GameManager.Instance.GetGameState() == GameState.Game)
+        if (GameManager.Instance.GetGameState() == GameState.Game || GameManager.Instance.GetGameState() == GameState.ChoiceCharacter)
         {
             LoadScene(SceneName.Inventory, LoadSceneMode.Additive);
             InventoryManager.Instance.ChangeModeInventory(mode);

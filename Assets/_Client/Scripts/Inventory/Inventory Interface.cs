@@ -15,6 +15,7 @@ public abstract class InventoryInterface : MonoBehaviour
     [SerializeField] protected TMP_Text _itemNamePanel;
     [SerializeField] protected TMP_Text _itemDescriptionPanel;
     protected InventoryItemSO _activeItem;
+    protected List<InventoryItemSO> activeItems;
 
     protected InventoryMode _mode;
 
@@ -23,6 +24,7 @@ public abstract class InventoryInterface : MonoBehaviour
     private void Start()
     {
         _inInventoryItems = new List<InventoryItemSO>();
+        activeItems = new List<InventoryItemSO>();
         _mode = InventoryManager.Instance.GetInventoryMode();
         _closeInventoryButton.onClick.AddListener(InventoryManager.Instance.CloseInventory);
         _infoPanel.SetActive(false);
@@ -38,7 +40,7 @@ public abstract class InventoryInterface : MonoBehaviour
             var item = _inInventoryItems[i];
             var Item = Instantiate(itemPrefab, _container);
             Item.transform.SetParent(_container);
-            Item.transform.localScale = new Vector3(1, 1, 1);
+            Item.transform.localScale = Vector3.one;
             Item.NewItem(item);
             Item.OnItemClicked += OnItemClicked;
 
@@ -56,8 +58,8 @@ public abstract class InventoryInterface : MonoBehaviour
         else ShowInfoPanel(item);
     }
 
-    protected virtual void ShowInfoPanel(InventoryItemSO item) { }
-    protected virtual void CloseInfoPanel() { }
+    protected abstract void ShowInfoPanel(InventoryItemSO item);
+    protected abstract void CloseInfoPanel();
 
     public void UseItem()
     {
