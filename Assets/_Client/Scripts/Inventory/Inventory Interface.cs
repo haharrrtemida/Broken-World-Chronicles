@@ -3,34 +3,34 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryInterface : MonoBehaviour
+public abstract class InventoryInterface : MonoBehaviour
 {
-    [SerializeField] private Button _closeInventoryButton;
-    [SerializeField] private Transform _container;
-    [SerializeField] private itemininventory itemPrefab;
-    [SerializeField] private GameObject _infoPanel;
-    [SerializeField] private GameObject _craftPanel;
+    [SerializeField] protected Button _closeInventoryButton;
+    [SerializeField] protected Transform _container;
+    [SerializeField] protected itemininventory itemPrefab;
+    [SerializeField] protected GameObject _infoPanel;
 
     [Header("Инфопанель")]
-    [SerializeField] private Image _imagePanel;
-    [SerializeField] private TMP_Text _itemNamePanel;
-    [SerializeField] private TMP_Text _itemDescriptionPanel;
-    private InventoryItemSO _activeItem;
+    [SerializeField] protected Image _imagePanel;
+    [SerializeField] protected TMP_Text _itemNamePanel;
+    [SerializeField] protected TMP_Text _itemDescriptionPanel;
+    protected InventoryItemSO _activeItem;
 
-    private bool _currentStateCraftPanel = false;
+    protected InventoryMode _mode;
 
-    private List<InventoryItemSO> _inInventoryItems;
+    protected List<InventoryItemSO> _inInventoryItems;
 
     private void Start()
     {
         _inInventoryItems = new List<InventoryItemSO>();
+        _mode = InventoryManager.Instance.GetInventoryMode();
         _closeInventoryButton.onClick.AddListener(InventoryManager.Instance.CloseInventory);
         _infoPanel.SetActive(false);
-        _craftPanel.SetActive(false);
         AddToInventory();
+        print(_mode);
     }
 
-    private void AddToInventory()
+    protected void AddToInventory()
     {
         _inInventoryItems = InventoryManager.Instance.GetList();
         for (int i = 0; i < _inInventoryItems.Count; i++)
@@ -50,44 +50,18 @@ public class InventoryInterface : MonoBehaviour
         }
     }
 
-    private void OnItemClicked(InventoryItemSO item)
+    protected void OnItemClicked(InventoryItemSO item)
     {
         if (_activeItem == item) CloseInfoPanel();
         else ShowInfoPanel(item);
     }
 
-    public void ShowInfoPanel(InventoryItemSO item)
-    {
-        _activeItem = item;
-        _imagePanel.sprite = item.GetSprite();
-        _itemNamePanel.text = item.Name();
-        _itemDescriptionPanel.text = item.About();
-        _infoPanel.SetActive(true);
-    }
-    public void CloseInfoPanel()
-    {
-        _activeItem = null;
-        _infoPanel.SetActive(false);
-    }
+    protected virtual void ShowInfoPanel(InventoryItemSO item) { }
+    protected virtual void CloseInfoPanel() { }
 
     public void UseItem()
     {
-        if (_activeItem != null && _activeItem.Craftable != true) InventoryManager.Instance.RemoveItem(_activeItem);
-        ScenesManager.Instance.ReloadInventory();
-    }
-
-    public void ShowOrCloseCraftPanel()
-    {
-        if (_currentStateCraftPanel == false)
-        {
-            _craftPanel.SetActive(true);
-            _infoPanel.SetActive(false);
-        }
-        else
-        {
-            _craftPanel.SetActive(false);
-            _infoPanel.SetActive(false);
-        }
-        _currentStateCraftPanel = !_currentStateCraftPanel;
+        InventoryManager.Instance.RemoveItem(_activeItem);
+        ScenesManager.Instance.ReloadInventory(_mode);
     }
 }
