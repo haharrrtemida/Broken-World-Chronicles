@@ -20,7 +20,6 @@ public class InventoryManager : PersistentSingleton<InventoryManager>
 
     public void AddItem(InventoryItemSO Item)
     {
-        print("Add to inv");
         _inventoryItems.Add(Item);
     }
 

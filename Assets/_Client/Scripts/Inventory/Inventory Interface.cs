@@ -74,14 +74,7 @@ public class InventoryInterface : MonoBehaviour
         else if (_mode == InventoryMode.Craft)
         {
             activeItems.Add(item);
-            //_imagePanel.(Color.red); change image
-            for (int i = 0; i > activeItems.Count; i++)
-            {
-                craftItemsNames = craftItemsNames + activeItems[i].Name().ToString() + "+";
-            }
-            _itemNamePanel.text = craftItemsNames;
-            _itemDescriptionPanel.text = "none";
-            _infoPanel.SetActive(true);
+            print(item.Name());
             CraftLogik();
         }
     }
@@ -99,20 +92,24 @@ public class InventoryInterface : MonoBehaviour
     }
     private void CraftLogik()
     {
-        if (_mode == InventoryMode.Craft)
+        for (int i = 0; i < activeItems.Count; i++)
         {
-            for (int i = 0; i > activeItems.Count; i++)
+            craftItemsNames = activeItems[i].Name();
+            print(activeItems[i].Name());
+        }
+        _itemNamePanel.text = craftItemsNames;
+        _infoPanel.SetActive(true);
+
+        for (int i = 0; i < craftItems.Length; i++)
+        {
+            CraftItem item = craftItems[i];
+            if (activeItems == item.GetIngridients())
             {
-                CraftItem item = craftItems[i];
-                if (activeItems == item.GetIngridients())
+                InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
+                for (int a = 0; a > activeItems.Count; a++)
                 {
-                    InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
-                    for (int a = 0; a > activeItems.Count; a++)
-                    {
-                        InventoryManager.Instance.RemoveItem(activeItems[a]);
-                        print("CRAFTING.....");
-                    }
-                    ScenesManager.Instance.ReloadInventory(_mode);
+                    InventoryManager.Instance.RemoveItem(activeItems[a]);
+                    print("CRAFTING.....");
                 }
             }
         }
