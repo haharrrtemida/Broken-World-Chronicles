@@ -8,6 +8,8 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
     [SerializeField] private WalSO _wal;
     [SerializeField] private TumSO _tum;
 
+    public bool IsCanSwitchLight => _wal.isSwitch;
+
     private Characters _currentCharacter;
 
     public void Initialize()
@@ -42,6 +44,7 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
 
     private void UpdateStateCharacters(Characters character)
     {
+        print("Current character is :" + character);    
         if(_currentCharacter == character) return;
         _currentCharacter = character;
     }

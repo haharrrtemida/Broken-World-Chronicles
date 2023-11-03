@@ -1664,7 +1664,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1855832584}
         m_TargetAssemblyTypeName: ChoiceCharacter, Assembly-CSharp
-        m_MethodName: SelectTum
+        m_MethodName: SelectWal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

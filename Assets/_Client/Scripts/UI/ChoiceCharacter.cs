@@ -6,7 +6,7 @@ public class ChoiceCharacter : UITimeStopElement
     [SerializeField] private Button _walButton;
     [SerializeField] private Button _tumButton;
 
-    public void SelectOll()
+    public void SelectWal()
     {
         CharactersManager.Instance.SelectWal();
     }
@@ -23,8 +23,8 @@ public class ChoiceCharacter : UITimeStopElement
 
     public override void Close()
     {
-        base.Close();
         _walButton.gameObject.SetActive(false);
         _tumButton.gameObject.SetActive(false);
+        base.Close();
     }
 }

@@ -9,7 +9,7 @@ public class LightSwitch : InteractiveZone
 
     public override void Activate()
     {
-        if (CharactersManager.Instance.GetStateCharacter() != Characters.Wal) return;
+        if (CharactersManager.Instance.GetStateCharacter() != Characters.Wal || CharactersManager.Instance.IsCanSwitchLight == false) return;
         if (!_isOn)
         {
             _localLight.gameObject.SetActive(true);

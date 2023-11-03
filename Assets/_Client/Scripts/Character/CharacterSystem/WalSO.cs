@@ -45,5 +45,7 @@ public class WalSO : CharacterSO
         {
             isSwitch = true;
         }
+
+        MonoBehaviour.print("Is Switch is : " + isSwitch);
     }
 }

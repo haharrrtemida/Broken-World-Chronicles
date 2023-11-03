@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8686448950524202, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8686448950524202, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8686448950524202, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8686448950524202, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -104,13 +104,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa
       objectReference: {fileID: 0}
+    - target: {fileID: 3327775560999337205, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2819
+      objectReference: {fileID: 0}
+    - target: {fileID: 3327775560999337205, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1628
+      objectReference: {fileID: 0}
     - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: lines.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: _lines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: lines.Array.data[0]
       value: "\u0414\u0438\u0432\u0430\u043D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: _lines.Array.data[0]
+      value: "\u0412\u043E\u0442 \u0431\u044B \u0441\u0435\u0441\u0442\u044C \u043D\u0430
+        \u0434\u0438\u0432\u0430\u043D \u0438 \u043E\u0442\u0434\u043E\u0445\u043D\u0443\u0442\u044C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: _lines.Array.data[1]
+      value: "\u041D\u043E \u043C\u0435\u043D\u044F \u0436\u0434\u0443\u0442 \u0432\u0435\u043B\u0438\u043A\u0438\u0435
+        \u0434\u0435\u043B\u0430!!"
       objectReference: {fileID: 0}
     - target: {fileID: 8049719664338303134, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: m_Size.x
