@@ -3,23 +3,26 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class InventoryInterface : MonoBehaviour
+public class InventoryInterface : MonoBehaviour
 {
-    [SerializeField] protected Button _closeInventoryButton;
-    [SerializeField] protected Transform _container;
-    [SerializeField] protected itemininventory itemPrefab;
-    [SerializeField] protected GameObject _infoPanel;
+    [SerializeField] private Button _closeInventoryButton;
+    [SerializeField] private Transform _container;
+    [SerializeField] private itemininventory itemPrefab;
+    [SerializeField] private GameObject _infoPanel;
+    [SerializeField] private CraftItem[] craftItems;
 
     [Header("Инфопанель")]
-    [SerializeField] protected Image _imagePanel;
-    [SerializeField] protected TMP_Text _itemNamePanel;
-    [SerializeField] protected TMP_Text _itemDescriptionPanel;
-    protected InventoryItemSO _activeItem;
-    protected List<InventoryItemSO> activeItems;
+    [SerializeField] private Image _imagePanel;
+    [SerializeField] private TMP_Text _itemNamePanel;
+    [SerializeField] private TMP_Text _itemDescriptionPanel;
+    private InventoryItemSO _activeItem;
+    private List<InventoryItemSO> activeItems;
 
-    protected InventoryMode _mode;
+    private string craftItemsNames;
 
-    protected List<InventoryItemSO> _inInventoryItems;
+    private InventoryMode _mode;
+
+    private List<InventoryItemSO> _inInventoryItems;
 
     private void Start()
     {
@@ -32,7 +35,7 @@ public abstract class InventoryInterface : MonoBehaviour
         print(_mode);
     }
 
-    protected void AddToInventory()
+    private void AddToInventory()
     {
         _inInventoryItems = InventoryManager.Instance.GetList();
         for (int i = 0; i < _inInventoryItems.Count; i++)
@@ -52,18 +55,66 @@ public abstract class InventoryInterface : MonoBehaviour
         }
     }
 
-    protected void OnItemClicked(InventoryItemSO item)
+    private void OnItemClicked(InventoryItemSO item)
     {
         if (_activeItem == item) CloseInfoPanel();
         else ShowInfoPanel(item);
     }
 
-    protected abstract void ShowInfoPanel(InventoryItemSO item);
-    protected abstract void CloseInfoPanel();
+    private void ShowInfoPanel(InventoryItemSO item)
+    {
+        if (_mode == InventoryMode.Inventory)
+        {
+            _activeItem = item;
+            _imagePanel.sprite = item.GetSprite();
+            _itemNamePanel.text = item.Name();
+            _itemDescriptionPanel.text = item.About();
+            _infoPanel.SetActive(true);
+        }
+        else if (_mode == InventoryMode.Craft)
+        {
+            activeItems.Add(item);
+            //_imagePanel.(Color.red); change image
+            for (int i = 0; i > activeItems.Count; i++)
+            {
+                craftItemsNames = craftItemsNames + activeItems[i].Name().ToString() + "+";
+            }
+            _itemNamePanel.text = craftItemsNames;
+            _itemDescriptionPanel.text = "none";
+            _infoPanel.SetActive(true);
+            CraftLogik();
+        }
+    }
+    private void CloseInfoPanel()
+    {
+        _activeItem = null;
+        activeItems = null;
+        _infoPanel.SetActive(false);
+    }
 
     public void UseItem()
     {
         InventoryManager.Instance.RemoveItem(_activeItem);
         ScenesManager.Instance.ReloadInventory(_mode);
+    }
+    private void CraftLogik()
+    {
+        if (_mode == InventoryMode.Craft)
+        {
+            for (int i = 0; i > activeItems.Count; i++)
+            {
+                CraftItem item = craftItems[i];
+                if (activeItems == item.GetIngridients())
+                {
+                    InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
+                    for (int a = 0; a > activeItems.Count; a++)
+                    {
+                        InventoryManager.Instance.RemoveItem(activeItems[a]);
+                        print("CRAFTING.....");
+                    }
+                    ScenesManager.Instance.ReloadInventory(_mode);
+                }
+            }
+        }
     }
 }
