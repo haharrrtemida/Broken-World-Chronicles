@@ -6,11 +6,13 @@ public class PlayerMotor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private AnimationPlayer _animationPlayer;
+    [SerializeField] private Transform _playerPoint;
 
     public event Action OnReachDestination;
 
     private Vector2 _targetPosition;
     public Vector2 TargetPosition => _targetPosition; 
+    public Transform PLayerPoint => _playerPoint;
 
     public void Initialize()
     {
@@ -34,7 +36,7 @@ public class PlayerMotor : MonoBehaviour
     public void TeleportToPoint(Vector2 position)
     {
         _agent.enabled = false;
-        transform.position = position;
+        _playerPoint.position = position;
         _agent.enabled = true;
     }
 
@@ -46,5 +48,5 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    private bool IsReachDestination => Vector2.Distance(transform.position, _targetPosition) <= _agent.stoppingDistance;
+    private bool IsReachDestination => Vector2.Distance(_playerPoint.position, _targetPosition) <= _agent.stoppingDistance;
 }
