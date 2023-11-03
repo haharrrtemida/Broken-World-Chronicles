@@ -38,7 +38,7 @@ public class Player : PersistentSingleton<Player>
 
     public void MoveToSpawnPoint(Vector3 point)
     {
-        transform.position = point;
+        _movement.PLayerPoint.position = point;
     }
 
     public void Move(Vector2 position)
