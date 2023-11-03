@@ -901,13 +901,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: m_Height
+      value: 1.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: m_Radius
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: m_AgentTypeID
+      value: -1372625422
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: avoidancePriority
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: m_ObstacleAvoidanceType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674454860637726040, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+      propertyPath: _agent
+      value: 
+      objectReference: {fileID: 409171800}
     - target: {fileID: 6674454860637726043, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.32
+      value: 7.18
       objectReference: {fileID: 0}
     - target: {fileID: 6674454860637726043, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.28
+      value: -18.07
       objectReference: {fileID: 0}
     - target: {fileID: 6674454860637726043, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -950,6 +974,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+--- !u!195 &409171800 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6307739360068863378, guid: fb93c51e70577204fad4c495bdb7140b, type: 3}
+  m_PrefabInstance: {fileID: 409171799}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &432091196
 GameObject:
   m_ObjectHideFlags: 0
@@ -6453,8 +6482,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0041003227, y: 0.0021500587, z: 0}
-    m_Extent: {x: 14.182899, y: 14.18125, z: 0}
+    m_Center: {x: 0.00454998, y: -0.0056500435, z: 0}
+    m_Extent: {x: 14.18065, y: 14.17845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
