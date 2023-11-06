@@ -4,48 +4,35 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Characters/Wal", fileName = "new Tum")]
 public class WalSO : CharacterSO
 {
-    [HideInInspector] public bool isSwitch = false;
-
     private bool _wiresIsActive = false;
 
     public override void Activate()
     {
-        MonoBehaviour.print("I am oll and i will somthing do");
+        MonoBehaviour.print("Current character is Wal");
+        SwitchOnWires();
     }
 
-    public void OpenCraft()
+
     {
-        MonoBehaviour.print("Opncgaa");
+        MonoBehaviour.print("Current character is not Wal");
+        SwitchOffWires();
     }
 
-    public void HZChtotoIwiee()
-    {
-        MonoBehaviour.print("fefee");
-    }
-
-    public void SwitchOnWires()
+    private void SwitchOnWires()
     {
         if (!_wiresIsActive)
         {
             Camera.main.cullingMask += (1 << LayerMask.NameToLayer("Wires"));
-        }
-        else
-        {
-            Camera.main.cullingMask -= (1 << LayerMask.NameToLayer("Wires"));
+            _wiresIsActive = true;
         }
     }
 
-    public void SwitchLight()
+    private void SwitchOffWires()
     {
-        if (isSwitch)
+        if(_wiresIsActive)
         {
-            isSwitch = false;
+            Camera.main.cullingMask -= (1 << LayerMask.NameToLayer("Wires"));
+            _wiresIsActive = false;
         }
-        else
-        {
-            isSwitch = true;
-        }
-
-        MonoBehaviour.print("Is Switch is : " + isSwitch);
     }
 }

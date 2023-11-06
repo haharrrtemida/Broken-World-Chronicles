@@ -23,33 +23,25 @@ public class CharacterTextBox : MonoBehaviour
 
     private IEnumerator TypeLine() 
     {
-        foreach (char c in _sentences[index].ToCharArray())
+        _textComponent.text = string.Empty;
+        for (int i = 0; i < _sentences[index].Length; i++)
         {
-            _textComponent.text += c;
+            _textComponent.text += _sentences[index][i];
             yield return new WaitForSeconds(_textSpeed);
         }
     }
 
     private void NextLine()
     {
-         if(_textComponent.text == _sentences[index])
+        if(index < _sentences.Length - 1)
         {
-            if(index < _sentences.Length - 1)
-            {
-                index++;
-                _textComponent.text = string.Empty;
-                StartCoroutine(TypeLine());
-            }
-            else
-            {
-                _sentences = null;
-                gameObject.SetActive(false);
-            }
+            index++;
+            StartCoroutine(TypeLine());
         }
-        else 
+        else
         {
-            StopAllCoroutines();
-            _textComponent.text = _sentences[index];
+            _textComponent.text = string.Empty;
+            _sentences = null;
         }
     }
 
@@ -61,11 +53,11 @@ public class CharacterTextBox : MonoBehaviour
             _sentences = lines;
             StartDialogue();
         }
-        if(_textComponent.text == _sentences[index])
+        else if(_textComponent.text == _sentences[index])
         {
             NextLine();
         }    
-        else 
+        else if (_textComponent.text != _sentences[index])
         {
             StopAllCoroutines();
             _textComponent.text = _sentences[index];

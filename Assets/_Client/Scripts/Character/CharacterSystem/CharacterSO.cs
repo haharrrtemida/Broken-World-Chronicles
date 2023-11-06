@@ -3,10 +3,12 @@ using UnityEngine;
 
 public abstract class CharacterSO : ScriptableObject
 {
+    [SerializeField] private string _name;
 
     private bool isCharacterOpen = false;
 
     public abstract void Activate();
+    public abstract void Deactivate();
 
     public void SetActive(bool stateCharcter)
     {
@@ -20,4 +22,6 @@ public abstract class CharacterSO : ScriptableObject
             CharacterButton.gameObject.SetActive(true);
         }
     }
+
+    public string GetName() => _name;
 }

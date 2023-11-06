@@ -5,10 +5,17 @@ public class TumSO : CharacterSO
 {
     public override void Activate()
     {   
-        MonoBehaviour.print("i am tun and i was activate"); 
+        MonoBehaviour.print("Current Character is Tum"); 
+        LoadCraft();
     }
 
-    public void LoadCraft()
+    public override void Deactivate()
+    {
+        MonoBehaviour.print("Current Character is not Tum");
+        ScenesManager.Instance.CloseInventory();
+    }
+
+    private void LoadCraft()
     {
         ScenesManager.Instance.OpenInventory(InventoryMode.Craft);
     }

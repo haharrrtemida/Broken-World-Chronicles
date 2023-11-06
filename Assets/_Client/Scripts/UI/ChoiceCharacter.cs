@@ -9,11 +9,13 @@ public class ChoiceCharacter : UITimeStopElement
     public void SelectWal()
     {
         CharactersManager.Instance.SelectWal();
+        Close();
     }
 
     public void SelectTum()
     {
         CharactersManager.Instance.SelectTum();
+        Close();
     }
     
     public void InitializePanel()
@@ -25,6 +27,10 @@ public class ChoiceCharacter : UITimeStopElement
     {
         _walButton.gameObject.SetActive(false);
         _tumButton.gameObject.SetActive(false);
+        if (GameManager.Instance.GetGameState() != GameState.Inventory)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Game);
+        }
         base.Close();
     }
 }

@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class ScenesManager : PersistentSingleton<ScenesManager>
 {
-    [SerializeField] private GameObject _player;
-
     public void Initialize()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -28,8 +26,9 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
     }
 
     public void LoadMainMenu()
-    {
+    { 
         LoadScene(SceneName.MainMenu);
+        GameManager.Instance.UpdateGameState(GameState.MainMenu);
         InputManager.Instance.ActivateUIMap();
     }
 
@@ -38,6 +37,7 @@ public class ScenesManager : PersistentSingleton<ScenesManager>
         LoadScene(SceneName.Level01);
         InputManager.Instance.ActivatePlayerMap();
         GameManager.Instance.UpdateGameState(GameState.OpenLevel);
+        UIManager.Instance.InitializeUI();
     }
 
     public void LoadNextScene()

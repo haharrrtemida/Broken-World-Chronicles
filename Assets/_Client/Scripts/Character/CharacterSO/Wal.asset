@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bf4a95597951e48b534e10af2bcc47, type: 3}
   m_Name: Wal
   m_EditorClassIdentifier: 
+  _name: Wal

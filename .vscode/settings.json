@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "dotnet.defaultSolution": "Broken-World-Chronicles.sln"
+    "dotnet.defaultSolution": "Broken-World-Chronicles.sln",
+    "dotnet.preferCSharpExtension": true
 }

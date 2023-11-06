@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class CharactersManager : PersistentSingleton<CharactersManager>
 {
     [SerializeField] private WalSO _wal;
-    [SerializeField] private TumSO _tum;
-
-    public bool IsCanSwitchLight => _wal.isSwitch;
+    [SerializeField] private TumSO _tum;            
 
     private Characters _currentCharacter;
 
@@ -18,7 +16,7 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
         _tum.SetActive(true);   
     }
 
-    public void UpdateCharacter(CharacterSO character, bool stateCharacter)
+    public void UpdateStateCharacter(CharacterSO character, bool stateCharacter)
     {
         if (character is WalSO)
         {
@@ -33,13 +31,17 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
     public void SelectWal()
     {
         UpdateStateCharacters(Characters.Wal);
+        _tum.Deactivate();
         _wal.Activate();
+        UIManager.Instance.ChangeCurrentCharacterText(_wal.GetName());
     }
 
     public void SelectTum()
     {
         UpdateStateCharacters(Characters.Tum);
+        _wal.Deactivate();
         _tum.Activate();
+        UIManager.Instance.ChangeCurrentCharacterText(_tum.GetName());
     }
 
     private void UpdateStateCharacters(Characters character)
@@ -49,10 +51,7 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
         _currentCharacter = character;
     }
 
-    public Characters GetStateCharacter()
-    {
-        return _currentCharacter;
-    }
+    public Characters GetStateCharacter() => _currentCharacter;
 
     public void OpenUIElement(Button ollButton, Button tunButton)
     {

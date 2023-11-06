@@ -17,6 +17,7 @@ public class Pause : UITimeStopElement
     {
         Close();
         Destroy(Player.Instance.gameObject);
+        UIManager.Instance.CloseUI();
         ScenesManager.Instance.LoadMainMenu();
     }
 }
