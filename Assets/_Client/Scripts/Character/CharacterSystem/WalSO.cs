@@ -13,6 +13,7 @@ public class WalSO : CharacterSO
     }
 
 
+    public override void Deactivate()
     {
         MonoBehaviour.print("Current character is not Wal");
         SwitchOffWires();
