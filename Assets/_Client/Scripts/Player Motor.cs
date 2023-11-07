@@ -12,7 +12,7 @@ public class PlayerMotor : MonoBehaviour
 
     private Vector2 _targetPosition;
     public Vector2 TargetPosition => _targetPosition; 
-    public Transform PLayerPoint => _playerPoint;
+    public Transform PLayerPoint => _playerPoint;  
 
     public void Initialize()
     {
