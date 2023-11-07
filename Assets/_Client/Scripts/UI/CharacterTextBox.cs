@@ -6,61 +6,90 @@ public class CharacterTextBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textComponent;
     [SerializeField] private float _textSpeed;
+    [SerializeField] private float _waitSecondsToNextline;
 
     private string[] _sentences;
-    private int index;
+    private int _index;
 
     public void Initialize() 
     {
-        _textComponent.text = string.Empty;
+        _textComponent.text = null;
     }   
 
     private void StartDialogue()
     {
-        index = 0;
+        _index = 0;
         StartCoroutine(TypeLine());
     }
 
     private IEnumerator TypeLine() 
     {
         _textComponent.text = string.Empty;
-        for (int i = 0; i < _sentences[index].Length; i++)
+        for (int i = 0; i < _sentences[_index].Length; i++)
         {
-            _textComponent.text += _sentences[index][i];
+            _textComponent.text += _sentences[_index][i];
             yield return new WaitForSeconds(_textSpeed);
         }
+        StartCoroutine(WaitToNextLine());
+    }
+    private IEnumerator WaitToNextLine()
+    {
+        yield return new WaitForSeconds(_waitSecondsToNextline);
+        NextLine();
     }
 
     private void NextLine()
     {
-        if(index < _sentences.Length - 1)
+
+        if (_index < _sentences.Length - 1)
         {
-            index++;
+            _index++;
             StartCoroutine(TypeLine());
         }
-        else
+        else if(_index == _sentences.Length - 1)
         {
-            _textComponent.text = string.Empty;
-            _sentences = null;
+            ResetParametrs();
         }
+    }
+
+    private void ResetParametrs()
+    {
+        _textComponent.text = null;
+        _sentences = null;
+        _index = 0;
     }
 
     public void SetText(string[] lines)
     {
-        if (lines == null) return;
-        if(_sentences != lines)
+        if (lines == null)
         {
-            _sentences = lines;
-            StartDialogue();
+            return;
         }
-        else if(_textComponent.text == _sentences[index])
+        else
         {
-            NextLine();
-        }    
-        else if (_textComponent.text != _sentences[index])
-        {
-            StopAllCoroutines();
-            _textComponent.text = _sentences[index];
+            if (_index == 0)
+            {
+                _sentences = lines;
+                StartDialogue();
+                return;
+            }
+            else if (_textComponent.text == _sentences[_index])
+            {
+                if (_index == _sentences.Length - 1)
+                {
+                    ResetParametrs();
+                    return; 
+                }
+                StopAllCoroutines();
+                NextLine();
+                return;
+            }
+            else if (_textComponent.text != _sentences[_index])
+            {
+                StopAllCoroutines();
+                _textComponent.text = _sentences[_index];
+                return;
+            }
         }
     }
 }

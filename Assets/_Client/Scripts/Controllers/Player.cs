@@ -13,8 +13,6 @@ public class Player : PersistentSingleton<Player>
     public PlayerState CurrentState => _currentState;   
     public CharacterTextBox CharacterTextBox => _characterTextBox;  
 
-    public Vector2 spawnPosition;
-
     public void Initialize()
     {
         _movement.Initialize();

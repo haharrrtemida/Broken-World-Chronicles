@@ -11,7 +11,7 @@ public class WalSO : CharacterSO
         MonoBehaviour.print("Current character is Wal");
         SwitchOnWires();
     }
-
+    
 
     public override void Deactivate()
     {
