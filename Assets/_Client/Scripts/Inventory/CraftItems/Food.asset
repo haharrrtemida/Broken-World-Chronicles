@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051a81756888634097d8424584a1518, type: 3}
   m_Name: Food
   m_EditorClassIdentifier: 
-  components:
+  _components:
   - {fileID: 11400000, guid: 420c20e2170ad2b4caff3e7f20a33fcb, type: 2}
   - {fileID: 11400000, guid: 048682adc8d314d4eb2b21b59b481697, type: 2}
   _itemAustCraft: {fileID: 11400000, guid: 9b5b69ed4469ba648b9edb98ee2a8c18, type: 2}
