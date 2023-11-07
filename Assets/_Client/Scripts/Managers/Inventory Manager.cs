@@ -26,7 +26,6 @@ public class InventoryManager : PersistentSingleton<InventoryManager>
     public void RemoveItem(InventoryItemSO Item)
     {
         _inventoryItems.Remove(Item);
-        ScenesManager.Instance.ReloadInventory(_mode);
     }
 
     public void CloseInventory()

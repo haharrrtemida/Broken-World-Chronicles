@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,9 +64,9 @@ public class InventoryInterface : MonoBehaviour
 
     private void ShowInfoPanel(InventoryItemSO item)
     {
+        _activeItem = item;
         if (_mode == InventoryMode.Inventory)
         {
-            _activeItem = item;
             _imagePanel.sprite = item.GetSprite();
             _itemNamePanel.text = item.Name();
             _itemDescriptionPanel.text = item.About();
@@ -100,17 +101,22 @@ public class InventoryInterface : MonoBehaviour
         _itemNamePanel.text = craftItemsNames;
         _infoPanel.SetActive(true);
 
-        for (int i = 0; i < craftItems.Length; i++)
+        for (int i = 1; i < craftItems.Length; i++)
         {
-            CraftItem item = craftItems[i];
-            if (activeItems == item.GetIngridients())
+            CraftItem itemCraft = craftItems[i];
+            if (Enumerable.SequenceEqual(activeItems, itemCraft.GetComponents()))
             {
-                InventoryManager.Instance.AddItem(item.GetItemSOAustCraftItem());
-                for (int a = 0; a > activeItems.Count; a++)
+                InventoryManager.Instance.AddItem(itemCraft.GetItemSOAustCraftItem());
+                for (int a = 0; a < activeItems.Count; a++)
                 {
                     InventoryManager.Instance.RemoveItem(activeItems[a]);
+                    ScenesManager.Instance.ReloadInventory(_mode);
                     print("CRAFTING.....");
                 }
+            }
+            else
+            {
+                _itemDescriptionPanel.text = "none";
             }
         }
     }

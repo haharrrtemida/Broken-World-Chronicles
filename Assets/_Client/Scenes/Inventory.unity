@@ -1131,6 +1131,7 @@ MonoBehaviour:
   _infoPanel: {fileID: 295420243}
   craftItems:
   - {fileID: 11400000, guid: 723708dda6f0cf7418d437d8d71e1741, type: 2}
+  - {fileID: 11400000, guid: 723708dda6f0cf7418d437d8d71e1741, type: 2}
   _imagePanel: {fileID: 878180069}
   _itemNamePanel: {fileID: 844336727}
   _itemDescriptionPanel: {fileID: 2050998253}
