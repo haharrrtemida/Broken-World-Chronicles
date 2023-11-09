@@ -27,9 +27,4 @@ public class InventoryManager : PersistentSingleton<InventoryManager>
     {
         _inventoryItems.Remove(Item);
     }
-
-    public void CloseInventory()
-    {
-        ScenesManager.Instance.CloseInventory();
-    }
 }

@@ -30,7 +30,7 @@ public class InventoryInterface : MonoBehaviour
         _inInventoryItems = new List<InventoryItemSO>();
         activeItems = new List<InventoryItemSO>();
         _mode = InventoryManager.Instance.GetInventoryMode();
-        _closeInventoryButton.onClick.AddListener(InventoryManager.Instance.CloseInventory);
+        _closeInventoryButton.onClick.AddListener(ScenesManager.Instance.CloseInventory);
         _infoPanel.SetActive(false);
         AddToInventory();
         print(_mode);
@@ -110,9 +110,9 @@ public class InventoryInterface : MonoBehaviour
                 for (int a = 0; a < activeItems.Count; a++)
                 {
                     InventoryManager.Instance.RemoveItem(activeItems[a]);
-                    ScenesManager.Instance.ReloadInventory(_mode);
                     print("CRAFTING.....");
                 }
+                ScenesManager.Instance.ReloadInventory(_mode);
             }
             else
             {
