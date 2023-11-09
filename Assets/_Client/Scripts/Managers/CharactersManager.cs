@@ -12,8 +12,8 @@ public class CharactersManager : PersistentSingleton<CharactersManager>
 
     public void Initialize()
     {
-        _wal.SetActive(true);
-        _tum.SetActive(true);   
+        _wal.Initialize(true);
+        _tum.Initialize(true);   
     }
 
     public void UpdateStateCharacter(CharacterSO character, bool stateCharacter)

@@ -16,12 +16,6 @@ public class CharacterTextBox : MonoBehaviour
         _textComponent.text = null;
     }   
 
-    private void StartDialogue()
-    {
-        _index = 0;
-        StartCoroutine(TypeLine());
-    }
-
     private IEnumerator TypeLine() 
     {
         _textComponent.text = string.Empty;
@@ -32,24 +26,22 @@ public class CharacterTextBox : MonoBehaviour
         }
         StartCoroutine(WaitToNextLine());
     }
+
     private IEnumerator WaitToNextLine()
     {
         yield return new WaitForSeconds(_waitSecondsToNextline);
-        NextLine();
     }
 
     private void NextLine()
     {
-
-        if (_index < _sentences.Length - 1)
+        for(int i = 0; i < _sentences.Length; i++)
         {
-            _index++;
             StartCoroutine(TypeLine());
+            StartCoroutine(WaitToNextLine());
+            _index++;
         }
-        else if(_index == _sentences.Length - 1)
-        {
-            ResetParametrs();
-        }
+
+        ResetParametrs();
     }
 
     private void ResetParametrs()
@@ -61,35 +53,14 @@ public class CharacterTextBox : MonoBehaviour
 
     public void SetText(string[] lines)
     {
-        if (lines == null)
+        if (lines == null || lines == _sentences)
         {
             return;
         }
         else
         {
-            if (_index == 0)
-            {
-                _sentences = lines;
-                StartDialogue();
-                return;
-            }
-            else if (_textComponent.text == _sentences[_index])
-            {
-                if (_index == _sentences.Length - 1)
-                {
-                    ResetParametrs();
-                    return; 
-                }
-                StopAllCoroutines();
-                NextLine();
-                return;
-            }
-            else if (_textComponent.text != _sentences[_index])
-            {
-                StopAllCoroutines();
-                _textComponent.text = _sentences[_index];
-                return;
-            }
+            _sentences = lines;
+            NextLine();
         }
     }
 }

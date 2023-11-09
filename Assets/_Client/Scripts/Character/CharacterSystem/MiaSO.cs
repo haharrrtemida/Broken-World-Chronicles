@@ -9,6 +9,11 @@ public class MiaSO : CharacterSO
 
     public override void Deactivate()
     {
-        
+
+    }
+
+    public override void Initialize(bool state)
+    {
+        base.Initialize(state);
     }
 }

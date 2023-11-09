@@ -6,6 +6,12 @@ public class WalSO : CharacterSO
 {
     private bool _wiresIsActive = false;
 
+    public override void Initialize(bool state)
+    {
+        base.Initialize(state);
+        _wiresIsActive = false;
+    }
+
     public override void Activate()
     {
         MonoBehaviour.print("Current character is Wal");

@@ -61,7 +61,7 @@ public class UIManager : PersistentSingleton<UIManager>
         if (GameManager.Instance.GetGameState() == GameState.Game)
         {
             GameManager.Instance.UpdateGameState(GameState.ChoiceCharacter);
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0.0f;
             _choiceCharacter.gameObject.SetActive(true);
             _choiceCharacter.InitializePanel();
         }

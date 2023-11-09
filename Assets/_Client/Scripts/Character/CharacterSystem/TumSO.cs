@@ -3,6 +3,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Characters/Tum", fileName = "new Tum")]
 public class TumSO : CharacterSO
 {
+    public override void Initialize(bool state)
+    {
+        base.Initialize(state);            
+    }
+
     public override void Activate()
     {   
         MonoBehaviour.print("Current Character is Tum"); 

@@ -7,7 +7,13 @@ public abstract class CharacterSO : ScriptableObject
 
     private bool isCharacterOpen = false;
 
+    public virtual void Initialize(bool state)                  
+    {
+        SetActive(state);
+    }
+
     public abstract void Activate();
+
     public abstract void Deactivate();
 
     public void SetActive(bool stateCharcter)
