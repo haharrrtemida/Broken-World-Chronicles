@@ -32,19 +32,18 @@ public class InputManager : PersistentSingleton<InputManager>
         
         Player.Instance.CurrentInteractable = SetTarget(mouseWorldPosition);
         Debug.Log("Change Target to: " + Target);
-
-        Player.Instance.Move(Target);
     }
 
     private Interectable SetTarget(Vector3 position)
     {
         Interectable selectedInteractable = null;
         RaycastHit2D hit = Physics2D.Raycast(position, Camera.main.transform.forward, 20);
-        if (hit && hit.transform.TryGetComponent(out selectedInteractable))
+        if (hit.transform.TryGetComponent(out selectedInteractable))
         {
             if (selectedInteractable is Zone)
             {
                 selectedInteractable.Interact();
+                Target = selectedInteractable.InteractionPoint.position;
             }
             else
             {
@@ -55,6 +54,9 @@ public class InputManager : PersistentSingleton<InputManager>
         {
             Target = position;
         }
+
+        Player.Instance.Move(Target);
+
         return selectedInteractable;
     }
 
