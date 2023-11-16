@@ -13,18 +13,16 @@ public class CharacterTextBox : MonoBehaviour
 
     public void Initialize() 
     {
-        _textComponent.text = null;
+        ResetParametrs();
     }   
 
     private IEnumerator TypeLine() 
     {
-        _textComponent.text = string.Empty;
-        for (int i = 0; i < _sentences[_index].Length; i++)
+        foreach(char c in _sentences[_index].ToCharArray())
         {
-            _textComponent.text += _sentences[_index][i];
+            _textComponent.text += c;   
             yield return new WaitForSeconds(_textSpeed);
         }
-        StartCoroutine(WaitToNextLine());
     }
 
     private IEnumerator WaitToNextLine()
@@ -32,13 +30,13 @@ public class CharacterTextBox : MonoBehaviour
         yield return new WaitForSeconds(_waitSecondsToNextline);
     }
 
-    private void NextLine()
+    private void Dialogue()
     {
-        for(int i = 0; i < _sentences.Length; i++)
+        for(int _index = 0; _index < _sentences.Length; _index++)
         {
+            _textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
             StartCoroutine(WaitToNextLine());
-            _index++;
         }
 
         ResetParametrs();
@@ -46,21 +44,27 @@ public class CharacterTextBox : MonoBehaviour
 
     private void ResetParametrs()
     {
-        _textComponent.text = null;
+        _textComponent.text = string.Empty;
         _sentences = null;
-        _index = 0;
+    }
+
+    private void StartDialogue(string[] lines)
+    {
+        _sentences = lines;
+        Dialogue();
     }
 
     public void SetText(string[] lines)
     {
-        if (lines == null || lines == _sentences)
+        if (lines != _sentences)
         {
-            return;
-        }
-        else
-        {
-            _sentences = lines;
-            NextLine();
+            if(_sentences != null)
+            {
+                StopAllCoroutines();
+                ResetParametrs();
+            }
+
+            StartDialogue(lines);
         }
     }
 }

@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Unity Editor (VSTU)",
             "type": "vstu-unity",
@@ -19,7 +20,8 @@
         {
             "name": "Unity Editor",
             "type": "vstuc",
-            "request": "attach"
+            "request": "attach",
+            "endPoint": "port"
         },
         {
             "name": "Windows Player",
