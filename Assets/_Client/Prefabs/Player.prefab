@@ -251,7 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _textComponent: {fileID: 7629104876909141112}
   _textSpeed: 0.1
-  _waitSecondsToNextline: 2
+  _waitSecondsToNextLine: 2
 --- !u!1 &3399967530661598698
 GameObject:
   m_ObjectHideFlags: 0

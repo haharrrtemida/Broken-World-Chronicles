@@ -32,8 +32,6 @@ public class InputManager : PersistentSingleton<InputManager>
         
         Player.Instance.CurrentInteractable = SetTarget(mouseWorldPosition);
         Debug.Log("Change Target to: " + Target);
-
-        Player.Instance.Move(Target);
     }
 
     private Interectable SetTarget(Vector3 position)
@@ -45,6 +43,7 @@ public class InputManager : PersistentSingleton<InputManager>
             if (selectedInteractable is Zone)
             {
                 selectedInteractable.Interact();
+                Target = selectedInteractable.InteractionPoint.position;
             }
             else
             {
@@ -55,6 +54,9 @@ public class InputManager : PersistentSingleton<InputManager>
         {
             Target = position;
         }
+
+        Player.Instance.Move(Target);
+
         return selectedInteractable;
     }
 

@@ -6,36 +6,37 @@ public class CharacterTextBox : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textComponent;
     [SerializeField] private float _textSpeed;
-    [SerializeField] private float _waitSecondsToNextline;
+    [SerializeField] private float _waitSecondsToNextLine;
 
     private string[] _sentences;
     private int _index;
 
     public void Initialize() 
     {
-        ResetParametrs();
+        _textComponent.text = null;
     }   
 
     private IEnumerator TypeLine() 
     {
-        foreach(char c in _sentences[_index].ToCharArray())
+        for (int i = 0; i < _sentences[_index].Length; i++)
         {
-            _textComponent.text += c;   
+            _textComponent.text += _sentences[_index][i];   
             yield return new WaitForSeconds(_textSpeed);
         }
+       // yield return new WaitForSeconds(_textSpeed);
     }
 
     private IEnumerator WaitToNextLine()
     {
-        yield return new WaitForSeconds(_waitSecondsToNextline);
+        yield return new WaitForSeconds(_waitSecondsToNextLine);
     }
 
-    private void Dialogue()
+    private void NextLine()
     {
-        for(int _index = 0; _index < _sentences.Length; _index++)
+        for(_index = 0; _index < _sentences.Length; _index++)
         {
             _textComponent.text = string.Empty;
-            StartCoroutine(TypeLine());
+            StartCoroutine(nameof (TypeLine));
             StartCoroutine(WaitToNextLine());
         }
 
@@ -44,27 +45,21 @@ public class CharacterTextBox : MonoBehaviour
 
     private void ResetParametrs()
     {
-        _textComponent.text = string.Empty;
+        _textComponent.text = null;
         _sentences = null;
-    }
-
-    private void StartDialogue(string[] lines)
-    {
-        _sentences = lines;
-        Dialogue();
+        _index = 0;
     }
 
     public void SetText(string[] lines)
     {
-        if (lines != _sentences)
+        if (lines == null || lines == _sentences)
         {
-            if(_sentences != null)
-            {
-                StopAllCoroutines();
-                ResetParametrs();
-            }
-
-            StartDialogue(lines);
+            return;
+        }
+        else
+        {
+            _sentences = lines;
+            NextLine();
         }
     }
 }
