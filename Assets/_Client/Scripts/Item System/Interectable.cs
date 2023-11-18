@@ -4,6 +4,7 @@ public abstract class Interectable : MonoBehaviour
 {
     [SerializeField] protected string[] _lines;
     [SerializeField] private Transform _interactionPoint;
+    [SerializeField] private string _name;
 
     public Transform InteractionPoint => _interactionPoint;
     
@@ -15,5 +16,15 @@ public abstract class Interectable : MonoBehaviour
     public virtual void Interact()
     {
         print(gameObject.name + ": Interact!");
+    }
+
+    private void OnMouseEnter()
+    {
+        UIManager.Instance.ChangeCurrentInteractableText(_name);
+    }
+
+    private void OnMouseExit()
+    {
+        UIManager.Instance.ChangeCurrentInteractableText("None");
     }
 }

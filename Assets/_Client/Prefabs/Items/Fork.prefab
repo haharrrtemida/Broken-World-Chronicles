@@ -93,6 +93,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 048682adc8d314d4eb2b21b59b481697, type: 2}
     - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: _name
+      value: Fork
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: lines.Array.size
       value: 2
       objectReference: {fileID: 0}

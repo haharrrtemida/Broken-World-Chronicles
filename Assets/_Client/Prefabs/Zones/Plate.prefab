@@ -194,3 +194,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines: []
   _interactionPoint: {fileID: 1357023373069060225}
+  _name: Plate

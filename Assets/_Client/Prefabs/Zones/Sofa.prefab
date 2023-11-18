@@ -113,6 +113,10 @@ PrefabInstance:
       value: -0.1628
       objectReference: {fileID: 0}
     - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
+      propertyPath: _name
+      value: Sofa
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692107797959964329, guid: 4d283db18684a8f4393271ea98a6c2df, type: 3}
       propertyPath: lines.Array.size
       value: 1
       objectReference: {fileID: 0}

@@ -249,9 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfc8f4e2a07ce04db37f21f61bf21e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textComponent: {fileID: 7629104876909141112}
+  _textMeshPro: {fileID: 7629104876909141112}
   _textSpeed: 0.1
-  _waitSecondsToNextLine: 2
 --- !u!1 &3399967530661598698
 GameObject:
   m_ObjectHideFlags: 0

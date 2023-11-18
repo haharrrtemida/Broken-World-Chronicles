@@ -29,34 +29,25 @@ public class InputManager : PersistentSingleton<InputManager>
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        
-        Player.Instance.CurrentInteractable = SetTarget(mouseWorldPosition);
+         
+        Player.Instance.CurrentInteractable = SetInterectable(mouseWorldPosition);
         Debug.Log("Change Target to: " + Target);
+
+        Player.Instance.Move(Target);
     }
 
-    private Interectable SetTarget(Vector3 position)
+    private Interectable SetInterectable(Vector3 position)
     {
         Interectable selectedInteractable = null;
         RaycastHit2D hit = Physics2D.Raycast(position, Camera.main.transform.forward, 20);
-        if (hit.transform.TryGetComponent(out selectedInteractable))
+        if (hit && hit.transform.gameObject.TryGetComponent(out selectedInteractable))
         {
-            if (selectedInteractable is Zone)
-            {
-                selectedInteractable.Interact();
-                Target = selectedInteractable.InteractionPoint.position;
-            }
-            else
-            {
-                Target = selectedInteractable.InteractionPoint.position;
-            }
+            Target = selectedInteractable.InteractionPoint.position;
         }
         else
         {
             Target = position;
         }
-
-        Player.Instance.Move(Target);
-
         return selectedInteractable;
     }
 

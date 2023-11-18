@@ -194,3 +194,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines: []
   _interactionPoint: {fileID: 3663210302133191485}
+  _name: Fireplace

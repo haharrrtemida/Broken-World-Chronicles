@@ -11,6 +11,7 @@ public class UIManager : PersistentSingleton<UIManager>
     [SerializeField] private ChoiceCharacter _choiceCharacter;
     [SerializeField] private Pause _pause;
     [SerializeField] private TextMeshProUGUI _currentCharacterText;
+    [SerializeField] private TextMeshProUGUI _currentInteractableText;
 
     const string TRANSITION_TRIGGER_PARAM = "TransitionComplete";
     public TransitionAnimation TransitionAnimation => _transitionAnimation;
@@ -19,12 +20,14 @@ public class UIManager : PersistentSingleton<UIManager>
     public void InitializeUI()
     {
         _currentCharacterText.gameObject.SetActive(true);
+        _currentInteractableText.gameObject.SetActive(true);
         ChangeCurrentCharacterText("None");
     }
 
     public void CloseUI()
     {
         _currentCharacterText.gameObject.SetActive(false);
+        _currentInteractableText.gameObject.SetActive(true);
     }
 
     public void SetTransitionTrigger()
@@ -35,6 +38,11 @@ public class UIManager : PersistentSingleton<UIManager>
     public void ChangeCurrentCharacterText(string currentCharacterName)
     {
         _currentCharacterText.text = "Current character : " + currentCharacterName;
+    }
+
+    public void ChangeCurrentInteractableText(string currentInteractableText)
+    {
+        _currentCharacterText.text = "Current object : " + currentInteractableText;
     }
 
     public void StartAnimationTransition()

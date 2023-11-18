@@ -4,62 +4,50 @@ using TMPro;
 
 public class CharacterTextBox : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textComponent;
+[SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private float _textSpeed;
-    [SerializeField] private float _waitSecondsToNextLine;
-
-    private string[] _sentences;
+    private string[] _lines;
     private int _index;
 
-    public void Initialize() 
+    public void Initialize ()
     {
-        _textComponent.text = null;
-    }   
+        _textMeshPro.text = string.Empty;
+    }
 
-    private IEnumerator TypeLine() 
+    private IEnumerator TypeLine(int numberLine)
     {
-        for (int i = 0; i < _sentences[_index].Length; i++)
+        foreach (char c in _lines[numberLine])
         {
-            _textComponent.text += _sentences[_index][i];   
+            _textMeshPro.text += c;
             yield return new WaitForSeconds(_textSpeed);
         }
-       // yield return new WaitForSeconds(_textSpeed);
     }
 
-    private IEnumerator WaitToNextLine()
-    {
-        yield return new WaitForSeconds(_waitSecondsToNextLine);
-    }
-
-    private void NextLine()
-    {
-        for(_index = 0; _index < _sentences.Length; _index++)
+    private IEnumerator PushText()
+    { 
+        for (_index = 0; _index < _lines.Length; _index++)
         {
-            _textComponent.text = string.Empty;
-            StartCoroutine(nameof (TypeLine));
-            StartCoroutine(WaitToNextLine());
+            StartCoroutine(TypeLine(_index));
+            float waitToNextLine = _lines[_index].Length * _textSpeed + 1.5f;
+            yield return new WaitForSeconds(waitToNextLine);
+            _textMeshPro.text = string.Empty;
         }
 
-        ResetParametrs();
-    }
-
-    private void ResetParametrs()
-    {
-        _textComponent.text = null;
-        _sentences = null;
-        _index = 0;
+        _lines = null;
     }
 
     public void SetText(string[] lines)
     {
-        if (lines == null || lines == _sentences)
+        if (lines != _lines)
         {
-            return;
+            _lines = lines;
+            StartCoroutine(PushText());
         }
-        else
+        else 
         {
-            _sentences = lines;
-            NextLine();
+            StopAllCoroutines();
+            _textMeshPro.text = string.Empty;
+            _lines = null;
         }
     }
 }

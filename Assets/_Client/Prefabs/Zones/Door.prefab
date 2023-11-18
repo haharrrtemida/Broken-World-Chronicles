@@ -136,6 +136,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3943449549923529904, guid: 7440e54452d3cf6488841187f52754a9, type: 3}
+      propertyPath: _name
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 4973528053253342356, guid: 7440e54452d3cf6488841187f52754a9, type: 3}
       propertyPath: m_Name
       value: Door

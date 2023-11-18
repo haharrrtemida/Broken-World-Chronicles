@@ -194,3 +194,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lines: []
   _interactionPoint: {fileID: 6939780378227924582}
+  _name: Kitchen set

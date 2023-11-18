@@ -81,6 +81,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 420c20e2170ad2b4caff3e7f20a33fcb, type: 2}
     - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
+      propertyPath: _name
+      value: Eggs
+      objectReference: {fileID: 0}
+    - target: {fileID: 6364509023208106913, guid: 13f393ba239d8c6419b76749f54c795d, type: 3}
       propertyPath: lines.Array.size
       value: 2
       objectReference: {fileID: 0}
