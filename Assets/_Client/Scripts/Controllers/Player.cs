@@ -8,10 +8,11 @@ public class Player : PersistentSingleton<Player>
     [SerializeField] private PlayerState _currentState;
     [SerializeField] private CharacterTextBox _characterTextBox;
 
-    public Interectable CurrentInteractable { get; set; }
     public PlayerMotor Movement => _movement;
     public PlayerState CurrentState => _currentState;   
     public CharacterTextBox CharacterTextBox => _characterTextBox;  
+
+    private Interectable _currentInteractable; 
 
     public void Initialize()
     {
@@ -24,13 +25,13 @@ public class Player : PersistentSingleton<Player>
     private void OnReachDestination()
     {
         print("Player: Target achieved");
-        if (CurrentInteractable)
+        if (_currentInteractable)
         {
-            CurrentInteractable.Interact();
-            print("Player: interaction with" + CurrentInteractable.gameObject.name);
+            _currentInteractable.Interact();
+            print("Player: interaction with" + _currentInteractable.gameObject.name);
+            _currentInteractable = null;
         }
 
-        CurrentInteractable = null;
         UpdatePlayerState(PlayerState.Idle);
     }
 
@@ -44,6 +45,16 @@ public class Player : PersistentSingleton<Player>
         if (GameManager.Instance.GetGameState() == GameState.Game && _currentState != PlayerState.Acting && _currentState != PlayerState.Speaking)
         {
             _movement.Move(position);
+            UpdatePlayerState(PlayerState.Moving);
+        }
+    }
+
+    public void Move(Interectable interactable)
+    {
+        if (GameManager.Instance.GetGameState() == GameState.Game && _currentState != PlayerState.Acting && _currentState != PlayerState.Speaking)
+        {
+            _movement.Move(interactable.InteractionPoint.position);
+            _currentInteractable = interactable;
             UpdatePlayerState(PlayerState.Moving);
         }
     }

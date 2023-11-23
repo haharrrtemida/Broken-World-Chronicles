@@ -42,7 +42,7 @@ public class UIManager : PersistentSingleton<UIManager>
 
     public void ChangeCurrentInteractableText(string currentInteractableText)
     {
-        _currentCharacterText.text = "Current object : " + currentInteractableText;
+        _currentInteractableText.text = "Interact with : " + currentInteractableText;
     }
 
     public void StartAnimationTransition()

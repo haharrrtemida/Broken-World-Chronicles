@@ -6,7 +6,7 @@ public class Transition : Interectable
     [SerializeField] private Transform _exitPosition;
     [SerializeField] private Transform _cameraExitPosition;
 
-    private string[] _NoEntyString = {"�����", "�������"};
+    private string[] _NoEntyString = {"Дверь", "Заперта"};
 
     public override void Interact()
     {

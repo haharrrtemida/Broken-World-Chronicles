@@ -40,6 +40,8 @@ public class CharacterTextBox : MonoBehaviour
     {
         if (lines != _lines)
         {
+            StopAllCoroutines();
+            _textMeshPro.text = string.Empty;
             _lines = lines;
             StartCoroutine(PushText());
         }

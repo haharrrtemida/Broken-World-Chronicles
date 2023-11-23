@@ -8,9 +8,10 @@ public abstract class Interectable : MonoBehaviour
 
     public Transform InteractionPoint => _interactionPoint;
     
-    protected virtual void OnMouseDown()
+    public void OnClick()
     {
        print("Mouse clicked on " + gameObject.name);
+       Player.Instance.Move(this);
     }
     
     public virtual void Interact()
@@ -18,12 +19,12 @@ public abstract class Interectable : MonoBehaviour
         print(gameObject.name + ": Interact!");
     }
 
-    private void OnMouseEnter()
+    public void OnEnter()
     {
         UIManager.Instance.ChangeCurrentInteractableText(_name);
     }
 
-    private void OnMouseExit()
+    public void OnExit()
     {
         UIManager.Instance.ChangeCurrentInteractableText("None");
     }

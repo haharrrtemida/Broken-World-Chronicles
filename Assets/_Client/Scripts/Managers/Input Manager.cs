@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class InputManager : PersistentSingleton<InputManager>
 {
-    public Vector2 Target { get; private set; }
-    
     private PlayerInput _playerInput;
     private PlayerInput.PlayerActions _playerActions;
     private PlayerInput.UIActions _UIActions;
@@ -29,26 +27,8 @@ public class InputManager : PersistentSingleton<InputManager>
     {
         Vector2 mousePosition = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-         
-        Player.Instance.CurrentInteractable = SetInterectable(mouseWorldPosition);
-        Debug.Log("Change Target to: " + Target);
 
-        Player.Instance.Move(Target);
-    }
-
-    private Interectable SetInterectable(Vector3 position)
-    {
-        Interectable selectedInteractable = null;
-        RaycastHit2D hit = Physics2D.Raycast(position, Camera.main.transform.forward, 20);
-        if (hit && hit.transform.gameObject.TryGetComponent(out selectedInteractable))
-        {
-            Target = selectedInteractable.InteractionPoint.position;
-        }
-        else
-        {
-            Target = position;
-        }
-        return selectedInteractable;
+        Player.Instance.Move(mouseWorldPosition);
     }
 
     private void OpenChoiceCharacter()
